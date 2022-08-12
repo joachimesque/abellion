@@ -2,7 +2,6 @@
 
 Smol browser-only web app to keep track of your eating habits and set goals to reduce meat & fish consumption.
 
-
 ## The technical side
 
 The app is built with `svelte-kit`/`vite`.
