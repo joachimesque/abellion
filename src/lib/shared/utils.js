@@ -11,3 +11,19 @@ export const getFormattedDay = (date) => {
 
 	return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 };
+
+export const getIntlDate = (date, style = 'long') => {
+	const options = {
+		short: { day: 'numeric' },
+		medium: { day: 'numeric', month: 'long' },
+		long: { dateStyle: 'long' },
+	};
+
+	let dateInstance = date;
+
+	if (!(date instanceof Date)) {
+		dateInstance = new Date(...date.split('-'));
+	}
+
+	return new Intl.DateTimeFormat('fr-FR', options[style]).format(dateInstance);
+};

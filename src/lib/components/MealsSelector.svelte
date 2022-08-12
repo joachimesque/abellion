@@ -3,6 +3,7 @@
 	import { browser } from '$app/env';
 	import { mealTypes, mealsPerDay } from '../shared/config';
 	import { cycleCalendar } from '../shared/stores';
+	import { getIntlDate } from '../shared/utils';
 
 	export let day;
 
@@ -24,12 +25,6 @@
 		hasScrolled = true;
 	});
 
-	const formatDate = (date) => {
-		return new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' }).format(
-			new Date(...date.split('-'))
-		);
-	};
-
 	const onSelectMeal = (event, { day, meal }) => {
 		cycleCalendar.update((current) => {
 			current[day].selection[meal] = event.target.value;
@@ -40,7 +35,7 @@
 
 <fieldset class="day" class:today={day[1].is_today}>
 	<legend>
-		{formatDate(day[0])}
+		{getIntlDate(day[0], 'medium')}
 	</legend>
 	{#each day[1].selection as _, index}
 		<div class="control">

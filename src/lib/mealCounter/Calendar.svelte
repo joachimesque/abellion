@@ -3,12 +3,13 @@
 
 	import { cycleDuration, mealsPerDay } from '../shared/config';
 	import { startDate, cycleCalendar } from '../shared/stores';
-	import { getFormattedDay } from '../shared/utils';
+	import { getFormattedDay, getIntlDate } from '../shared/utils';
 	import MealsSelector from '../components/MealsSelector.svelte';
 
 	let newCycleCalendar = {};
 	let newStartDate = $startDate ?? new Date();
 	let shadowIntensity = 0;
+	let calendarEnds = [];
 
 	const today = new Date();
 	const dayInMs = 1000 * 60 * 60 * 24;
@@ -43,10 +44,30 @@
 			shadowIntensity = event.target.scrollLeft / contentScrollWidth;
 		});
 	});
+
+	$: {
+		const first = Object.keys($cycleCalendar)[0];
+		const last = Object.keys($cycleCalendar)[Object.keys($cycleCalendar).length - 1];
+		let style = 'short';
+
+		// if different months
+		if (first.split('-')[1] !== last.split('-')[1]) {
+			style = 'medium';
+
+			if (first.split('-')[0] !== last.split('-')[0]) {
+				style = 'long';
+			}
+		}
+
+		calendarEnds = [getIntlDate(first, style), getIntlDate(last, 'medium')];
+	}
 </script>
 
 <section>
-	<h2>Calendrier</h2>
+	<h2>
+		Calendrier
+		<small>du {calendarEnds[0]} au {calendarEnds[1]}</small>
+	</h2>
 	<div class="scrollable-container" style="--shadow-intensity: {shadowIntensity}">
 		<div class="scrollable-container-content">
 			{#each Object.entries($cycleCalendar) as day}
