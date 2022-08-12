@@ -9,11 +9,18 @@
 	let hasScrolled = false;
 
 	onMount(() => {
+		if (!day[1].is_today) return;
 		if (!browser) return;
 		if (hasScrolled) return;
-		if (!document.querySelector('.day.today')) return;
 
-		document.querySelector('.day.today').scrollIntoView({ inline: 'center' });
+		const todayEl = document?.querySelector('.day.today');
+		if (!todayEl) return;
+
+		const wrapperWidth = todayEl.closest('.scrollable-container').scrollWidth;
+
+		const leftScroll = Math.round(todayEl.offsetLeft - (wrapperWidth - todayEl.scrollWidth) / 2);
+
+		todayEl.parentNode.scroll({ left: leftScroll });
 		hasScrolled = true;
 	});
 
