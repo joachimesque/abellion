@@ -8,9 +8,7 @@
 		erased = new URL(document.location).searchParams.get('reset') === '';
 	});
 
-	$: {
-		erased = $startDate == null;
-	}
+	$: erased = $startDate == null;
 
 	const handleErase = () => {
 		if (
