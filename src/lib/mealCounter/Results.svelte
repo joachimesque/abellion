@@ -1,31 +1,31 @@
 <script>
-	import { mealTypes, impactThreshold } from '../shared/config'
-	import { mealRules, selectedMeals } from '../shared/stores'
+	import { mealTypes, impactThreshold } from '../shared/config';
+	import { mealRules, selectedMeals } from '../shared/stores';
 
-	export let rulesImpact
-	export let mealsImpact
+	export let rulesImpact;
+	export let mealsImpact;
 
-	let mealsLeft = {}
-	let mealsAlerts = {}
+	let mealsLeft = {};
+	let mealsAlerts = {};
 
 	$: {
 		Object.keys($selectedMeals).forEach((key) => {
-			mealsLeft[key] = Math.max(0, $mealRules[key] - $selectedMeals[key])
-		})
+			mealsLeft[key] = Math.max(0, $mealRules[key] - $selectedMeals[key]);
+		});
 	}
 
 	$: {
 		mealTypes.forEach((mealType) => {
-			let alert = true
+			let alert = true;
 
 			// Veg* options are never on alert
 			if (mealType.impact < impactThreshold) {
-				alert = false
+				alert = false;
 			}
 
 			// Meal rule is not broken
 			if (mealsLeft[mealType.name] > 0) {
-				alert = false
+				alert = false;
 			}
 
 			// Meal rule is 0 AND no meal has been selected
@@ -33,11 +33,11 @@
 				$mealRules[mealType.name] === mealsLeft[mealType.name] &&
 				$selectedMeals[mealType.name] === 0
 			) {
-				alert = false
+				alert = false;
 			}
 
-			mealsAlerts[mealType.name] = alert
-		})
+			mealsAlerts[mealType.name] = alert;
+		});
 	}
 </script>
 

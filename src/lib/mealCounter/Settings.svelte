@@ -1,28 +1,28 @@
 <script>
-	import { mealTypes, cycleDuration, mealsPerDay } from '../shared/config'
-	import { mealRules } from '../shared/stores'
+	import { mealTypes, cycleDuration, mealsPerDay } from '../shared/config';
+	import { mealRules } from '../shared/stores';
 
-	const numberOfMeals = cycleDuration * mealsPerDay.length
+	const numberOfMeals = cycleDuration * mealsPerDay.length;
 
-	$: rulesLeftToSelect = numberOfMeals - Object.values($mealRules).reduce((p, a) => p + a, 0)
+	$: rulesLeftToSelect = numberOfMeals - Object.values($mealRules).reduce((p, a) => p + a, 0);
 
 	function onRuleInputChange(event) {
-		let value = parseInt(event.target.value)
+		let value = parseInt(event.target.value);
 
-		const allInputs = [...document.querySelectorAll('input.rule_input')]
-		let allValues = allInputs.reduce((p, input) => p + parseInt(input.value), 0)
+		const allInputs = [...document.querySelectorAll('input.rule_input')];
+		let allValues = allInputs.reduce((p, input) => p + parseInt(input.value), 0);
 
 		if (allValues > numberOfMeals) {
-			let diff = allValues - numberOfMeals
-			value = value - diff
+			let diff = allValues - numberOfMeals;
+			value = value - diff;
 		}
 
 		mealRules.update((current) => {
 			return {
 				...current,
 				[event.target.name]: value,
-			}
-		})
+			};
+		});
 	}
 </script>
 

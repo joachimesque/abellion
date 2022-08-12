@@ -1,48 +1,48 @@
 <script>
-	import { onMount } from 'svelte'
+	import { onMount } from 'svelte';
 
-	import { cycleDuration, mealsPerDay } from '../shared/config'
-	import { startDate, cycleCalendar } from '../shared/stores'
-	import { getFormattedDay } from '../shared/utils'
-	import MealsSelector from '../components/MealsSelector.svelte'
+	import { cycleDuration, mealsPerDay } from '../shared/config';
+	import { startDate, cycleCalendar } from '../shared/stores';
+	import { getFormattedDay } from '../shared/utils';
+	import MealsSelector from '../components/MealsSelector.svelte';
 
-	let newCycleCalendar = {}
-	let newStartDate = $startDate ?? new Date()
-	let shadowIntensity = 0
+	let newCycleCalendar = {};
+	let newStartDate = $startDate ?? new Date();
+	let shadowIntensity = 0;
 
-	const today = new Date()
-	const dayInMs = 1000 * 60 * 60 * 24
-	const timeDifference = Math.round((today.getTime() - newStartDate.getTime()) / dayInMs)
-	const dayOfCycle = Math.round(timeDifference % cycleDuration)
-	const cycleStart = new Date(today.getTime() - dayOfCycle * dayInMs)
+	const today = new Date();
+	const dayInMs = 1000 * 60 * 60 * 24;
+	const timeDifference = Math.round((today.getTime() - newStartDate.getTime()) / dayInMs);
+	const dayOfCycle = Math.round(timeDifference % cycleDuration);
+	const cycleStart = new Date(today.getTime() - dayOfCycle * dayInMs);
 
-	;[...Array(cycleDuration).keys()].map((_, index) => {
-		const day = new Date(cycleStart.getTime() + index * dayInMs)
-		const formattedDay = getFormattedDay(day)
+	[...Array(cycleDuration).keys()].map((_, index) => {
+		const day = new Date(cycleStart.getTime() + index * dayInMs);
+		const formattedDay = getFormattedDay(day);
 
-		newCycleCalendar[formattedDay] = {}
-		newCycleCalendar[formattedDay].is_today = formattedDay === getFormattedDay(today)
+		newCycleCalendar[formattedDay] = {};
+		newCycleCalendar[formattedDay].is_today = formattedDay === getFormattedDay(today);
 		newCycleCalendar[formattedDay].selection = [...Array(mealsPerDay.length).keys()].map(
 			(_, index) => {
 				if (formattedDay in $cycleCalendar) {
-					return $cycleCalendar[formattedDay].selection[index]
+					return $cycleCalendar[formattedDay].selection[index];
 				}
-				return null
+				return null;
 			}
-		)
-	})
+		);
+	});
 
-	cycleCalendar.set(newCycleCalendar)
+	cycleCalendar.set(newCycleCalendar);
 
 	onMount(() => {
-		let scrollableContainerEl = document.querySelector('.scrollable-container')
-		let contentEl = document.querySelector('.scrollable-container-content')
-		let contentScrollWidth = contentEl?.scrollWidth - scrollableContainerEl?.offsetWidth
+		let scrollableContainerEl = document.querySelector('.scrollable-container');
+		let contentEl = document.querySelector('.scrollable-container-content');
+		let contentScrollWidth = contentEl?.scrollWidth - scrollableContainerEl?.offsetWidth;
 
 		contentEl?.addEventListener('scroll', (event) => {
-			shadowIntensity = event.target.scrollLeft / contentScrollWidth
-		})
-	})
+			shadowIntensity = event.target.scrollLeft / contentScrollWidth;
+		});
+	});
 </script>
 
 <section>

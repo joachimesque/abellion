@@ -1,15 +1,15 @@
 <script>
-	import { onMount } from 'svelte'
-	import { startDate } from '../shared/stores'
+	import { onMount } from 'svelte';
+	import { startDate } from '../shared/stores';
 
-	let erased
+	let erased;
 
 	onMount(() => {
-		erased = new URL(document.location).searchParams.get('reset') === ''
-	})
+		erased = new URL(document.location).searchParams.get('reset') === '';
+	});
 
 	$: {
-		erased = $startDate == null
+		erased = $startDate == null;
 	}
 
 	const handleErase = () => {
@@ -18,12 +18,12 @@
 				'Voulez-vous vraiment supprimer toutes vos données ?\nVous allez perdre vos règles de repas et votre progression jusque là.'
 			)
 		) {
-			localStorage.clear()
-			const urlParams = new URLSearchParams(window.location.search)
-			urlParams.set('reset', '')
-			window.location.search = urlParams
+			localStorage.clear();
+			const urlParams = new URLSearchParams(window.location.search);
+			urlParams.set('reset', '');
+			window.location.search = urlParams;
 		}
-	}
+	};
 </script>
 
 <span aria-live="polite">

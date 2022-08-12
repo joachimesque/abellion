@@ -1,33 +1,33 @@
 <script>
-	import { mealTypes, cycleDuration, impactLocaleOptions, mealsPerDay } from '../shared/config'
-	import { mealRules, startDate, selectedMeals } from '../shared/stores'
-	import Calendar from './Calendar.svelte'
-	import Results from './Results.svelte'
-	import Settings from './Settings.svelte'
+	import { mealTypes, cycleDuration, impactLocaleOptions, mealsPerDay } from '../shared/config';
+	import { mealRules, startDate, selectedMeals } from '../shared/stores';
+	import Calendar from './Calendar.svelte';
+	import Results from './Results.svelte';
+	import Settings from './Settings.svelte';
 
-	let showSettings = false
+	let showSettings = false;
 
-	$: rulesImpact = getRulesImpact($mealRules).toLocaleString('fr-FR', impactLocaleOptions)
+	$: rulesImpact = getRulesImpact($mealRules).toLocaleString('fr-FR', impactLocaleOptions);
 	$: rulesImpactYear = getRulesImpactYear(getRulesImpact($mealRules)).toLocaleString(
 		'fr-FR',
 		impactLocaleOptions
-	)
-	$: mealsImpact = getRulesImpact($selectedMeals).toLocaleString('fr-FR', impactLocaleOptions)
+	);
+	$: mealsImpact = getRulesImpact($selectedMeals).toLocaleString('fr-FR', impactLocaleOptions);
 	$: allowStart =
-		Object.values($mealRules).reduce((p, a) => p + a, 0) === cycleDuration * mealsPerDay.length
+		Object.values($mealRules).reduce((p, a) => p + a, 0) === cycleDuration * mealsPerDay.length;
 
 	const getRulesImpact = (meals) => {
-		return mealTypes.map((type) => type.impact * meals[type.name]).reduce((p, a) => p + a, 0)
-	}
+		return mealTypes.map((type) => type.impact * meals[type.name]).reduce((p, a) => p + a, 0);
+	};
 
 	const getRulesImpactYear = (impact) => {
-		return (impact / cycleDuration) * 0.365
-	}
+		return (impact / cycleDuration) * 0.365;
+	};
 
 	const handleStart = () => {
-		startDate.set(new Date())
-		showSettings = false
-	}
+		startDate.set(new Date());
+		showSettings = false;
+	};
 </script>
 
 {#if !$startDate || showSettings}

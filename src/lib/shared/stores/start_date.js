@@ -1,32 +1,32 @@
-import { browser } from '$app/env'
-import { writable } from 'svelte/store'
+import { browser } from '$app/env';
+import { writable } from 'svelte/store';
 
-const defaultValue = null
+const defaultValue = null;
 const initialValue = (() => {
-	if (!browser) return defaultValue
+	if (!browser) return defaultValue;
 
-	const valueFromLocalStorage = localStorage.getItem('startDate')
+	const valueFromLocalStorage = localStorage.getItem('startDate');
 
-	if (!valueFromLocalStorage) return defaultValue
-	if (['null', 'undefined'].includes(valueFromLocalStorage)) return defaultValue
+	if (!valueFromLocalStorage) return defaultValue;
+	if (['null', 'undefined'].includes(valueFromLocalStorage)) return defaultValue;
 
-	return new Date(parseInt(valueFromLocalStorage))
-})()
+	return new Date(parseInt(valueFromLocalStorage));
+})();
 
-export const startDate = writable(initialValue)
+export const startDate = writable(initialValue);
 
 startDate.subscribe((value) => {
 	if (browser && value) {
-		let sanitizedValue = value
+		let sanitizedValue = value;
 
 		if (value instanceof Date) {
-			sanitizedValue = value.getTime()
+			sanitizedValue = value.getTime();
 		} else {
-			sanitizedValue = JSON.stringify(value)
+			sanitizedValue = JSON.stringify(value);
 		}
 
-		localStorage.setItem('startDate', sanitizedValue)
+		localStorage.setItem('startDate', sanitizedValue);
 	}
-})
+});
 
-export { startDate as default }
+export { startDate as default };

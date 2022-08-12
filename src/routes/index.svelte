@@ -1,9 +1,9 @@
 <script context="module">
-	export const prerender = true
+	export const prerender = true;
 </script>
 
 <script>
-	import MealCounter from '$lib/mealCounter/index.svelte'
+	import MealCounter from '$lib/mealCounter/index.svelte';
 </script>
 
 <svelte:head>

@@ -1,6 +1,6 @@
 <script context="module">
-	export const hydrate = false
-	export const prerender = true
+	export const hydrate = false;
+	export const prerender = true;
 </script>
 
 <svelte:head>
@@ -29,7 +29,12 @@
 
 	<h2>Impact de la viande sur le cycle de l’eau</h2>
 
-  <p>Il faut vingt fois plus d’eau pour produire une calorie venant d’un morceau de bœuf qu’une calorie venant d’une pomme de terre, et il faut plus de cinq fois la quantité d’eau pour faire un kilo de protéines à partir de bœuf plutôt qu’à partir de légumineuses (haricot, etc.) ou de céréales.</p>
+	<p>
+		Il faut vingt fois plus d’eau pour produire une calorie venant d’un morceau de bœuf qu’une
+		calorie venant d’une pomme de terre, et il faut plus de cinq fois la quantité d’eau pour faire
+		un kilo de protéines à partir de bœuf plutôt qu’à partir de légumineuses (haricot, etc.) ou de
+		céréales.
+	</p>
 
 	<h2>Impact de la viande sur la biodiversité</h2>
 

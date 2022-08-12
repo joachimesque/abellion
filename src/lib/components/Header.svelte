@@ -1,14 +1,14 @@
 <script>
-	import { page } from '$app/stores'
+	import { page } from '$app/stores';
 
 	const site_pages = [
 		['/', 'Accueil'],
 		['/pourquoi', 'Pourquoi ?'],
 		['/comment', 'Comment ?'],
 		['/a-propos', 'À propos'],
-	]
+	];
 
-	let displayMenu = false
+	let displayMenu = false;
 </script>
 
 <header>

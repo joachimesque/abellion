@@ -1,5 +1,5 @@
 <script>
-	import EraseButton from './EraseButton.svelte'
+	import EraseButton from './EraseButton.svelte';
 </script>
 
 <footer>

@@ -1,34 +1,34 @@
 <script>
-	import { onMount } from 'svelte'
-	import { browser } from '$app/env'
-	import { mealTypes, mealsPerDay } from '../shared/config'
-	import { cycleCalendar } from '../shared/stores'
+	import { onMount } from 'svelte';
+	import { browser } from '$app/env';
+	import { mealTypes, mealsPerDay } from '../shared/config';
+	import { cycleCalendar } from '../shared/stores';
 
-	export let day
+	export let day;
 
-	let hasScrolled = false
+	let hasScrolled = false;
 
 	onMount(() => {
-		if (!browser) return
-		if (hasScrolled) return
-		if (!document.querySelector('.day.today')) return
+		if (!browser) return;
+		if (hasScrolled) return;
+		if (!document.querySelector('.day.today')) return;
 
-		document.querySelector('.day.today').scrollIntoView({ inline: 'center' })
-		hasScrolled = true
-	})
+		document.querySelector('.day.today').scrollIntoView({ inline: 'center' });
+		hasScrolled = true;
+	});
 
 	const formatDate = (date) => {
 		return new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' }).format(
 			new Date(...date.split('-'))
-		)
-	}
+		);
+	};
 
 	const onSelectMeal = (event, { day, meal }) => {
 		cycleCalendar.update((current) => {
-			current[day].selection[meal] = event.target.value
-			return current
-		})
-	}
+			current[day].selection[meal] = event.target.value;
+			return current;
+		});
+	};
 </script>
 
 <fieldset class="day" class:today={day[1].is_today}>
