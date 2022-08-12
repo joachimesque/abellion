@@ -1,0 +1,29 @@
+{
+	"name": "abellion",
+	"version": "0.0.1",
+	"description": "Smol browser-only web app to keep track of your eating habits and set goals to reduce meat & fish consumption.",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"package": "svelte-kit package",
+		"preview": "vite preview",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
+		"format": "prettier --write --plugin-search-dir=. ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "next",
+		"@sveltejs/kit": "next",
+		"eslint": "^8.16.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"prettier": "^2.6.2",
+		"prettier-plugin-svelte": "^2.7.0",
+		"svelte": "^3.44.0",
+		"vite": "^3.0.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"cookie": "^0.4.1",
+		"normalize.css": "^8.0.1"
+	}
+}

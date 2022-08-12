@@ -1,0 +1,48 @@
+@import 'normalize.css';
+
+html {
+	font-family: sans-serif;
+}
+
+body {
+	box-sizing: border-box;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+	padding: 1em;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+footer {
+	flex: 0 0 auto;
+}
+
+.small {
+	font-size: 0.833em;
+}
+
+.big {
+	font-size: 1.2em;
+}
+
+.gaufrier {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+	gap: 2rem 1rem;
+}
+
+@media (min-width: 40rem) {
+	body {
+		padding: 2em;
+	}
+
+	.gaufrier {
+		display: flex;
+		justify-content: space-around;
+		gap: 1rem;
+	}
+}

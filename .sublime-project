@@ -1,0 +1,9 @@
+{
+	"settings": {
+		"trim_automatic_white_space": true,
+		"translate_tabs_to_spaces": false,
+		"detect_indentation": true,
+		"indent_to_bracket": true,
+		"tab_size": 2
+	}
+}
