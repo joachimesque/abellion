@@ -52,7 +52,7 @@
 	ul {
 		display: flex;
 		justify-content: center;
-		gap: 0.75em 2em;
+		gap: 0.75rem 2rem;
 		list-style: none;
 		margin: 0;
 	}
@@ -83,6 +83,11 @@
 		font-size: 1.2em;
 		text-decoration: none;
 		color: RoyalBlue;
+		white-space: nowrap;
+
+		/* Better affordance */
+		padding: 0.375rem 1rem;
+		margin: -0.375rem -1rem;
 	}
 
 	a.menu_item:hover,
