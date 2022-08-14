@@ -1,10 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import { cycleDuration, mealsPerDay } from '../shared/config';
-	import { startDate, cycleCalendar } from '../shared/stores';
-	import { getFormattedDay, getIntlDate } from '../shared/utils';
-	import MealsSelector from '../components/MealsSelector.svelte';
+	import { cycleDuration, mealsPerDay } from '$lib/shared/config';
+	import { startDate, cycleCalendar } from '$lib/shared/stores';
+	import { getFormattedDay, getIntlDate } from '$lib/shared/utils';
+	import MealsSelector from '$lib/components/MealsSelector.svelte';
 
 	let newCycleCalendar = {};
 	let newStartDate = $startDate ?? new Date();

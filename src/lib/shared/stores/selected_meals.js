@@ -1,5 +1,5 @@
 import { derived } from 'svelte/store';
-import { getEmptyMealObject } from '../utils';
+import { getEmptyMealObject } from '$lib/shared/utils';
 import cycleCalendar from './cycle_calendar';
 
 export const selectedMeals = derived(cycleCalendar, ($cycleCalendar) => {

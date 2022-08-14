@@ -1,6 +1,6 @@
 <script>
-	import { mealTypes, cycleDuration, impactLocaleOptions, mealsPerDay } from '../shared/config';
-	import { mealRules, startDate, selectedMeals } from '../shared/stores';
+	import { mealTypes, cycleDuration, impactLocaleOptions, mealsPerDay } from '$lib/shared/config';
+	import { mealRules, startDate, selectedMeals } from '$lib/shared/stores';
 	import Calendar from './Calendar.svelte';
 	import Results from './Results.svelte';
 	import Settings from './Settings.svelte';

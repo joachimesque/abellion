@@ -1,6 +1,7 @@
 <script>
-	import { mealTypes, cycleDuration, mealsPerDay } from '../shared/config';
-	import { mealRules } from '../shared/stores';
+	import { mealTypes, cycleDuration, mealsPerDay } from '$lib/shared/config';
+	import { mealRules } from '$lib/shared/stores';
+	import { getEmptyMealObject } from '$lib/shared/utils';
 
 	const numberOfMeals = cycleDuration * mealsPerDay.length;
 

@@ -1,6 +1,6 @@
 <script>
-	import { mealTypes, impactThreshold } from '../shared/config';
-	import { mealRules, selectedMeals } from '../shared/stores';
+	import { mealTypes, impactThreshold } from '$lib/shared/config';
+	import { mealRules, selectedMeals } from '$lib/shared/stores';
 
 	export let rulesImpact;
 	export let mealsImpact;
