@@ -1,5 +1,10 @@
 <script>
-	import { mealTypes, impactThreshold, impactLocaleOptions, cycleDuration } from '$lib/shared/config';
+	import {
+		mealTypes,
+		impactThreshold,
+		impactLocaleOptions,
+		cycleDuration,
+	} from '$lib/shared/config';
 	import { mealRules, selectedMeals } from '$lib/shared/stores';
 	import MealCounter from '$lib/components/MealCounter.svelte';
 
@@ -60,6 +65,9 @@
 			{mealsImpact.toLocaleString('fr-FR', impactLocaleOptions)}
 			sur {rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e
 		</strong>
-		(soit {(mealsImpact / (cycleDuration * 2)).toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e par repas)
+		(soit {(mealsImpact / (cycleDuration * 2)).toLocaleString(
+			'fr-FR',
+			impactLocaleOptions
+		)}&nbsp;kCO<sub>2</sub>e par repas)
 	</p>
 </section>

@@ -5,7 +5,7 @@
 
 	export let mealsImpact;
 
-	$: selectedMealNumber = Object.values($selectedMeals).reduce((p, a) => p + a, 0)
+	$: selectedMealNumber = Object.values($selectedMeals).reduce((p, a) => p + a, 0);
 </script>
 
 <section>
@@ -20,6 +20,9 @@
 			Impact de {selectedMealNumber} repas&nbsp;:
 			{mealsImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e
 		</strong>
-		soit {(mealsImpact / selectedMealNumber).toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e par repas
+		soit {(mealsImpact / selectedMealNumber).toLocaleString(
+			'fr-FR',
+			impactLocaleOptions
+		)}&nbsp;kCO<sub>2</sub>e par repas
 	</p>
 </section>

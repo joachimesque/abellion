@@ -45,7 +45,9 @@
 	<p>
 		Impact de votre choix de menus&nbsp;:
 		<strong>
-			{rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr title="kilos de gaz à effet de serre en équivalent dioxyde de carbone">
+			{rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr
+				title="kilos de gaz à effet de serre en équivalent dioxyde de carbone"
+			>
 				kCO<sub>2</sub>e
 			</abbr>
 		</strong>
@@ -70,7 +72,9 @@
 	<p>
 		Impact de votre choix de menus&nbsp;:
 		<strong>
-			{rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr title="kilos de gaz à effet de serre en équivalent dioxyde de carbone">
+			{rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr
+				title="kilos de gaz à effet de serre en équivalent dioxyde de carbone"
+			>
 				kCO<sub>2</sub>e
 			</abbr>
 		</strong>
@@ -101,9 +105,7 @@
 	{/if}
 
 	{#if $mode === 'track'}
-		<button type="button" on:click={changeModeToPreview}>
-			Revenir en mode "preview"
-		</button>
+		<button type="button" on:click={changeModeToPreview}> Revenir en mode "preview" </button>
 
 		<button type="button" on:click={() => (showSettings = false)}>
 			📆 Revenir au calendrier
