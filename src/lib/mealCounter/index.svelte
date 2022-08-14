@@ -1,18 +1,16 @@
 <script>
 	import { mealTypes, cycleDuration, impactLocaleOptions, mealsPerDay } from '$lib/shared/config';
-	import { mealRules, startDate, selectedMeals } from '$lib/shared/stores';
+	import { mealRules, startDate, selectedMeals, mode } from '$lib/shared/stores';
 	import Calendar from './Calendar.svelte';
-	import Results from './Results.svelte';
+	import PreviewResults from './PreviewResults.svelte';
+	import TrackResults from './TrackResults.svelte';
 	import Settings from './Settings.svelte';
 
 	let showSettings = false;
 
-	$: rulesImpact = getRulesImpact($mealRules).toLocaleString('fr-FR', impactLocaleOptions);
-	$: rulesImpactYear = getRulesImpactYear(getRulesImpact($mealRules)).toLocaleString(
-		'fr-FR',
-		impactLocaleOptions
-	);
-	$: mealsImpact = getRulesImpact($selectedMeals).toLocaleString('fr-FR', impactLocaleOptions);
+	$: rulesImpact = getRulesImpact($mealRules);
+	$: rulesImpactYear = getRulesImpactYear(getRulesImpact($mealRules));
+	$: mealsImpact = getRulesImpact($selectedMeals);
 	$: allowStart =
 		Object.values($mealRules).reduce((p, a) => p + a, 0) === cycleDuration * mealsPerDay.length;
 
@@ -24,54 +22,109 @@
 		return (impact / cycleDuration) * 0.365;
 	};
 
-	const handleStart = () => {
+	const changeModeToTrack = () => {
 		startDate.set(new Date());
+		mode.set('track');
+		showSettings = false;
+	};
+
+	const changeModeToPreview = () => {
+		startDate.set(null);
+		mode.set('preview');
 		showSettings = false;
 	};
 </script>
 
-{#if !$startDate || showSettings}
-	<Settings />
+{#if $mode === 'preview'}
+	<p>Mode: Preview</p>
 {/if}
 
-<p>
-	Impact de votre choix de menus&nbsp;:
-	<strong>
-		{rulesImpact}&nbsp;<abbr title="kilos de gaz à effet de serre en équivalent dioxyde de carbone">
-			kCO<sub>2</sub>e
-		</abbr>
-	</strong>
-	{' '} pour {cycleDuration} jours, ou
-	<strong>
-		{rulesImpactYear}&nbsp;<abbr
-			title="tonnes de gaz à effet de serre en équivalent dioxyde de carbone"
-		>
-			tCO<sub>2</sub>e
-		</abbr>
-	</strong>
-	par an. La moyenne annuelle française est de
-	<strong>
-		1,9&nbsp;tCO<sub>2</sub>e
-	</strong>
-</p>
+{#if $mode === 'track'}
+	<p>Mode: Track</p>
 
-{#if !$startDate}
-	<button type="button" on:click={handleStart} disabled={!allowStart}>
-		📆 Commencez à remplir votre calendrier
-	</button>
-	{#if !allowStart}
-		<span>Veuillez remplir tous les repas avant d’accéder au calendrier.</span>
+	<p>
+		Impact de votre choix de menus&nbsp;:
+		<strong>
+			{rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr title="kilos de gaz à effet de serre en équivalent dioxyde de carbone">
+				kCO<sub>2</sub>e
+			</abbr>
+		</strong>
+		{' '} pour {cycleDuration} jours, ou
+		<strong>
+			{rulesImpactYear.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr
+				title="tonnes de gaz à effet de serre en équivalent dioxyde de carbone"
+			>
+				tCO<sub>2</sub>e
+			</abbr>
+		</strong>
+		par an. La moyenne annuelle française est de
+		<strong>
+			1,9&nbsp;tCO<sub>2</sub>e
+		</strong>
+	</p>
+{/if}
+
+{#if showSettings}
+	<Settings />
+
+	<p>
+		Impact de votre choix de menus&nbsp;:
+		<strong>
+			{rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr title="kilos de gaz à effet de serre en équivalent dioxyde de carbone">
+				kCO<sub>2</sub>e
+			</abbr>
+		</strong>
+		{' '} pour {cycleDuration} jours, ou
+		<strong>
+			{rulesImpactYear.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr
+				title="tonnes de gaz à effet de serre en équivalent dioxyde de carbone"
+			>
+				tCO<sub>2</sub>e
+			</abbr>
+		</strong>
+		par an. La moyenne annuelle française est de
+		<strong>
+			1,9&nbsp;tCO<sub>2</sub>e
+		</strong>
+	</p>
+
+	{#if $mode === 'preview'}
+		<!-- Cancel -->
+		<button type="button" on:click={() => (showSettings = false)}>
+			Rester en mode "preview"
+		</button>
+
+		<!-- Change mode and start tracking -->
+		<button type="button" on:click={changeModeToTrack} disabled={!allowStart}>
+			📆 Commencez à remplir votre calendrier
+		</button>
+	{/if}
+
+	{#if $mode === 'track'}
+		<button type="button" on:click={changeModeToPreview}>
+			Revenir en mode "preview"
+		</button>
+
+		<button type="button" on:click={() => (showSettings = false)}>
+			📆 Revenir au calendrier
+		</button>
 	{/if}
 {/if}
 
-{#if $startDate && showSettings}
-	<button type="button" on:click={() => (showSettings = false)}> 📆 Revenir au calendrier </button>
-{/if}
-
-{#if $startDate && !showSettings}
-	<button type="button" on:click={() => (showSettings = true)}> ⚙️ Réglages </button>
+{#if $mode && !showSettings}
+	<button type="button" on:click={() => (showSettings = true)}>⚙️ Réglages</button>
 
 	<Calendar />
 
-	<Results {rulesImpact} {mealsImpact} />
+	{#if $mode === 'preview'}
+		<PreviewResults {mealsImpact} />
+	{/if}
+
+	{#if $mode === 'track'}
+		<TrackResults {rulesImpact} {mealsImpact} />
+	{/if}
+{/if}
+
+{#if !$mode}
+	Chargement des données…
 {/if}
