@@ -15,14 +15,16 @@
 			<MealCounter {mealType} count={$selectedMeals[mealType.name] || 0} />
 		{/each}
 	</div>
-	<p>
-		<strong class="big">
-			Impact de {selectedMealNumber} repas&nbsp;:
-			{mealsImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e
-		</strong>
-		soit {(mealsImpact / selectedMealNumber).toLocaleString(
-			'fr-FR',
-			impactLocaleOptions
-		)}&nbsp;kCO<sub>2</sub>e par repas
-	</p>
+	{#if selectedMealNumber}
+		<p>
+			<strong class="big">
+				Impact de {selectedMealNumber} repas&nbsp;:
+				{mealsImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e
+			</strong>
+			soit {(mealsImpact / selectedMealNumber).toLocaleString(
+				'fr-FR',
+				impactLocaleOptions
+			)}&nbsp;kCO<sub>2</sub>e par repas
+		</p>
+	{/if}
 </section>

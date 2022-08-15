@@ -15,7 +15,7 @@
 		Object.values($mealRules).reduce((p, a) => p + a, 0) === cycleDuration * mealsPerDay.length;
 
 	const getRulesImpact = (meals) => {
-		return mealTypes.map((type) => type.impact * meals[type.name]).reduce((p, a) => p + a, 0);
+		return mealTypes?.map((type) => type.impact * meals[type.name]).reduce((p, a) => p + a, 0);
 	};
 
 	const getRulesImpactYear = (impact) => {
@@ -36,11 +36,11 @@
 </script>
 
 {#if $mode === 'preview'}
-	<p>Mode: Preview</p>
+	<p>Mode&nbsp;: <strong>Aperçu de vos repas</strong></p>
 {/if}
 
 {#if $mode === 'track'}
-	<p>Mode: Track</p>
+	<p>Mode&nbsp;: <strong>Suivi de vos objectifs</strong></p>
 
 	<p>
 		Impact de votre choix de menus&nbsp;:
@@ -95,7 +95,7 @@
 	{#if $mode === 'preview'}
 		<!-- Cancel -->
 		<button type="button" on:click={() => (showSettings = false)}>
-			Rester en mode "preview"
+			Rester en mode <strong>aperçu de vos repas</strong>
 		</button>
 
 		<!-- Change mode and start tracking -->
@@ -105,7 +105,9 @@
 	{/if}
 
 	{#if $mode === 'track'}
-		<button type="button" on:click={changeModeToPreview}> Revenir en mode "preview" </button>
+		<button type="button" on:click={changeModeToPreview}
+			>Revenir en mode <strong>aperçu de vos repas</strong></button
+		>
 
 		<button type="button" on:click={() => (showSettings = false)}>
 			📆 Revenir au calendrier

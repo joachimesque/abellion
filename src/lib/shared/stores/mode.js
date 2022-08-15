@@ -1,6 +1,5 @@
 import { browser } from '$app/env';
 import { writable } from 'svelte/store';
-import { getEmptyMealObject } from '$lib/shared/utils';
 
 const defaultValue = 'preview';
 const initialValue = browser
