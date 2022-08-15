@@ -8,9 +8,9 @@ const dayInMs = 1000 * 60 * 60 * 24;
 const getCalendar = (data = null) => {
 	const newCalendar = {};
 	const today = new Date();
-	const cycleStart = new Date(today.getTime() - cycleDuration * dayInMs);
+	const cycleStart = new Date(today.getTime() - (cycleDuration - 1) * dayInMs);
 
-	[...Array(cycleDuration * 2 + 1).keys()].map((_, index) => {
+	[...Array(cycleDuration * 2 - 1).keys()].map((_, index) => {
 		const day = new Date(cycleStart.getTime() + index * dayInMs);
 		const formattedDay = getFormattedDay(day);
 
