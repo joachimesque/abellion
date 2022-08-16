@@ -8,15 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⚙️ Checkout
-        uses: actions/checkout@v2
-
-      - name: 🏷 Git branch name
-        id: git-branch-name
-        uses: EthanSK/git-branch-name-action@v1
+        uses: actions/checkout@v3
 
       - name: 🛠 Build
         run: |
-          sed -i -e '6ipaths: { base: "/branches/${{ env.GIT_BRANCH_NAME }}" },\' ./svelte.config.js
+          sed -i -e '6ipaths: { base: "/branches/${{ github.event.pull_request.head.ref }}" },\' ./svelte.config.js
+          sed -i 's+href="/manifest.webmanifest"+href="/branches/${{ github.event.pull_request.head.ref }}/manifest.webmanifest"+g' ./src/app.html
+          sed -i 's+"/"+"/branches/${{ github.event.pull_request.head.ref }}/"+g' ./static/manifest.webmanifest
           npm ci
           npm run build
 
@@ -27,4 +25,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: build/
-          server-dir: branches/${{ env.GIT_BRANCH_NAME }}/
+          server-dir: branches/${{ github.event.pull_request.head.ref }}/

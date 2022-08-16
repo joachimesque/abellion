@@ -12,11 +12,18 @@
 	let displayMenu = false;
 </script>
 
+<a href="#main" class="skip-to-content-link">Sauter au contenu</a>
+
 <header>
 	<span class="corner" role="img" title="logo">🧑‍🌾</span>
 
 	<nav>
-		<button id="toggle" aria-expanded={displayMenu} on:click={() => (displayMenu = !displayMenu)}>
+		<button
+			class="mobile-menu"
+			id="toggle"
+			aria-expanded={displayMenu}
+			on:click={() => (displayMenu = !displayMenu)}
+		>
 			Menu
 		</button>
 
@@ -40,6 +47,23 @@
 </header>
 
 <style>
+	.skip-to-content-link {
+		position: absolute;
+		z-index: 3;
+		left: 0;
+		top: 0;
+		background: RoyalBlue;
+		color: white;
+		font-size: 1.2rem;
+		padding: 1rem 1.4rem;
+		transform: translateY(-100%);
+		transition: transform 0.3s;
+	}
+
+	.skip-to-content-link:focus {
+		transform: translateY(0%);
+	}
+
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -61,7 +85,7 @@
 		display: flex;
 	}
 
-	button {
+	button.mobile-menu {
 		display: none;
 		position: absolute;
 		right: 0;
@@ -74,8 +98,8 @@
 		color: #222;
 	}
 
-	button:focus,
-	button:hover {
+	button.mobile-menu:focus,
+	button.mobile-menu:hover {
 		background: #fff;
 		color: #000;
 	}
@@ -102,7 +126,7 @@
 	}
 
 	@media (max-width: 40rem) {
-		button {
+		button.mobile-menu {
 			display: block;
 		}
 		ul {

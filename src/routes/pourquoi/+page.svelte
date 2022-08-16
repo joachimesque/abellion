@@ -1,8 +1,3 @@
-<script context="module">
-	export const hydrate = false;
-	export const prerender = true;
-</script>
-
 <svelte:head>
 	<title>Pourquoi manger moins de viande — Abellion 🧑‍🌾</title>
 </svelte:head>
