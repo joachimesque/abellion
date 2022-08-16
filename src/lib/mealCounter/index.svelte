@@ -39,14 +39,14 @@
 {#if $mode === 'preview'}
 	<p>
 		Mode&nbsp;: <strong>Aperçu de vos repas</strong>
-		<a href={`${base}a-propos#le-mode-apercu`} title="Aide du mode Aperçu">?</a>
+		<a href={`${base}/a-propos#le-mode-apercu`} title="Aide du mode Aperçu">?</a>
 	</p>
 {/if}
 
 {#if $mode === 'track'}
 	<p>
 		Mode&nbsp;: <strong>Suivi de vos objectifs</strong>
-		<a href={`${base}a-propos#le-mode-suivi`} title="Aide du mode Suivi">?</a>
+		<a href={`${base}/a-propos#le-mode-suivi`} title="Aide du mode Suivi">?</a>
 	</p>
 
 	<p>

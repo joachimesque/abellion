@@ -22,7 +22,7 @@
 		bien supérieur aux régimes alimentaires limités aux seuls produits végétaux. Pour réduire
 		l’impact climatique de nos assiettes, il faut réduire autant que possible notre consommation de
 		produits venant des animaux. Mais le climat n’est pas la seule raison, comme le montre la page <a
-			href={`${base}pourquoi`}>Pourquoi c’est important de manger moins de viande&nbsp;?</a
+			href={`${base}/pourquoi`}>Pourquoi c’est important de manger moins de viande&nbsp;?</a
 		>
 	</p>
 
@@ -31,7 +31,7 @@
 		qu’il vaut mieux s’y prendre&nbsp;? Les produits animaux font tellement partie de notre culture
 		que ça peut paraître impossible à éliminer de nos menus. Pour ça, il y a plein de pistes à
 		explorer—et cet outil Abellion n’en est qu’une. Pour tout savoir, visitez la page <a
-			href={`${base}pourquoi`}>Comment manger moins de viande</a
+			href={`${base}/comment`}>Comment manger moins de viande</a
 		>
 	</p>
 
