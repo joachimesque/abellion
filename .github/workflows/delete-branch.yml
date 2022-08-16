@@ -1,0 +1,20 @@
+name: Cleanup branch on delete
+on: [delete, workflow_dispatch]
+
+jobs:
+  delete:
+    if: github.event.ref_type == 'branch'
+    name: 🗑 Delete branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⚙️ Checkout
+        uses: actions/checkout@v2
+
+      - name: 🧹 Clean deleted branch
+        uses: StephanThierry/ftp-delete-action@v2.1
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          remoteDirectories: branches/${{ github.event.ref }}/
+          workingDir: "."
