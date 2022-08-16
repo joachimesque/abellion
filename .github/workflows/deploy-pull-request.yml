@@ -13,6 +13,7 @@ jobs:
       - name: 🛠 Build
         run: |
           sed -i -e '6ipaths: { base: "/branches/${{ github.event.pull_request.head.ref }}" },\' ./svelte.config.js
+          sed -i 's+href="/manifest.json"+href="/branches/${{ github.event.pull_request.head.ref }}/manifest.json"+g' ./src/app.html
           npm ci
           npm run build
 
