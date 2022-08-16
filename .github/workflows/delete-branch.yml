@@ -1,0 +1,30 @@
+name: Cleanup branch on delete
+on: [delete, workflow_dispatch]
+
+jobs:
+  delete:
+    if: github.event.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧹 Clean up
+        run: |
+          echo "Clean up for branch ${{ github.event.ref }}"
+
+      - name: ⚙️ Checkout
+        uses: actions/checkout@v2
+
+      - name: 🏷 Set environment variables
+        run: |
+          # Short name for current branch. For PRs, use target branch (base ref)
+          GIT_BRANCH=${GITHUB_BASE_REF:-${GITHUB_REF#refs/heads/}}
+          echo "GIT_BRANCH=$GIT_BRANCH" >> $GITHUB_ENV
+          echo "${{ env.GIT_BRANCH }}"
+
+    # - name: Clean deleted branch
+    #   uses: StephanThierry/ftp-delete-action@/v2.1
+    #   with:
+    #     host: ${{ secrets.FTP_SERVER }}
+    #     user: ${{ secrets.FTP_USER }}
+    #     password: ${{ secrets.FTP_PASSWORD }}
+    #     remoteDirectories: branches/${{ env.GIT_BRANCH_NAME }}/
+    #     workingDir: "."
