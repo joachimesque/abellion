@@ -19,6 +19,6 @@ export const selectedMeals = derived(
 
 		return newSelectedMeals;
 	}
-});
+);
 
 export { selectedMeals as default };
