@@ -1,5 +1,6 @@
 <script>
-	import { page } from '$app/stores';
+	import { base } from '$app/paths';
+  import { page } from '$app/stores';
 
 	const site_pages = [
 		['/', 'Accueil'],
@@ -12,7 +13,7 @@
 </script>
 
 <header>
-	<span class="corner" role="img" title="logo"> 🧑‍🌾 </span>
+	<span class="corner" role="img" title="logo">🧑‍🌾</span>
 
 	<nav>
 		<button id="toggle" aria-expanded={displayMenu} on:click={() => (displayMenu = !displayMenu)}>
@@ -27,7 +28,7 @@
 						class:active={$page.url.pathname === site_page[0]}
 						on:click={() => (displayMenu = false)}
 						sveltekit:prefetch
-						href={site_page[0]}
+						href={`${base}${site_page[0]}`}
 					>
 						{site_page[1]}
 					</a>
