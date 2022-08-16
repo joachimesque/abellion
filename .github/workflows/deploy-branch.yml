@@ -16,7 +16,7 @@ jobs:
 
       - name: 🛠 Build
         run: |
-          sed -i -e '6ipaths: { base: "branches/${{ env.GIT_BRANCH_NAME }}" },\' ./svelte.config.js
+          sed -i -e '6ipaths: { base: "/branches/${{ env.GIT_BRANCH_NAME }}" },\' ./svelte.config.js
           npm ci
           npm run build
 
