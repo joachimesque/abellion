@@ -25,7 +25,7 @@
 				<li>
 					<a
 						class="menu_item"
-						class:active={$page.url.pathname === site_page[0]}
+						class:active={$page.url.pathname === `${base}${site_page[0]}`}
 						on:click={() => (displayMenu = false)}
 						sveltekit:prefetch
 						href={`${base}${site_page[0]}`}
