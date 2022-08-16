@@ -1,0 +1,30 @@
+name: Deploy Pull Request
+
+on: [pull_request, workflow_dispatch]
+
+jobs:
+  deploy:
+    name: 🪴 Deploy Pull Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⚙️ Checkout
+        uses: actions/checkout@v2
+
+      - name: 🏷 Git branch name
+        id: git-branch-name
+        uses: EthanSK/git-branch-name-action@v1
+
+      - name: 🛠 Build
+        run: |
+          sed -i -e '6ipaths: { base: "/branches/${{ env.GIT_BRANCH_NAME }}" },\' ./svelte.config.js
+          npm ci
+          npm run build
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: build/
+          server-dir: branches/${{ env.GIT_BRANCH_NAME }}/
