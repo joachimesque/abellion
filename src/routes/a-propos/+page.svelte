@@ -1,8 +1,3 @@
-<script context="module">
-	export const hydrate = false;
-	export const prerender = true;
-</script>
-
 <svelte:head>
 	<title>À propos — Abellion 🧑‍🌾</title>
 </svelte:head>
