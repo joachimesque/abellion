@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import { mealTypes, cycleDuration, impactLocaleOptions, mealsPerDay } from '$lib/shared/config';
 	import { mealRules, startDate, selectedMeals, mode } from '$lib/shared/stores';
 	import Calendar from './Calendar.svelte';
@@ -36,11 +37,17 @@
 </script>
 
 {#if $mode === 'preview'}
-	<p>Mode&nbsp;: <strong>Aperçu de vos repas</strong></p>
+	<p>
+		Mode&nbsp;: <strong>Aperçu de vos repas</strong>
+		<a href={`${base}a-propos#le-mode-apercu`} title="Aide du mode Aperçu">?</a>
+	</p>
 {/if}
 
 {#if $mode === 'track'}
-	<p>Mode&nbsp;: <strong>Suivi de vos objectifs</strong></p>
+	<p>
+		Mode&nbsp;: <strong>Suivi de vos objectifs</strong>
+		<a href={`${base}a-propos#le-mode-suivi`} title="Aide du mode Suivi">?</a>
+	</p>
 
 	<p>
 		Impact de votre choix de menus&nbsp;:
