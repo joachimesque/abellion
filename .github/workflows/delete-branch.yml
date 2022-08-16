@@ -1,4 +1,5 @@
 name: Cleanup branch on delete
+
 on: [delete, workflow_dispatch]
 
 jobs:
@@ -17,4 +18,4 @@ jobs:
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           remoteDirectories: branches/${{ github.event.ref }}/
-          workingDir: "."
+          workingDir: '.'

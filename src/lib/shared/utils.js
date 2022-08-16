@@ -22,7 +22,7 @@ export const getIntlDate = (date, style = 'long') => {
 	let dateInstance = date;
 
 	if (!(date instanceof Date)) {
-    const dateArray = date.split('-')
+		const dateArray = date.split('-');
 		dateInstance = new Date(dateArray[0], dateArray[1] - 1, dateArray[2]);
 	}
 
