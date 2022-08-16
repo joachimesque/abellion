@@ -2,6 +2,7 @@
 	"short_name": "abellion",
 	"name": "Abellion 🧑‍🌾",
 	"start_url": "/",
+	"scope": "/",
 	"icons": [
 		{
 			"src": "logo_512.png",
@@ -9,9 +10,8 @@
 			"sizes": "512x512"
 		}
 	],
-	"background_color": "#3367D6",
+	"background_color": "#77B255",
 	"display": "standalone",
-	"scope": "/",
-	"theme_color": "#3367D6",
+	"theme_color": "#77B255",
 	"description": "Abellion vous aide à décarbonner votre alimentation, en vous proposant de définir et chiffrer vos menus en matière d’émissions carbone."
 }
