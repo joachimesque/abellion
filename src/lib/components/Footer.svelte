@@ -24,7 +24,8 @@
 		à Montreuil
 		<br />
 		hébergé proprement chez <a href="https://www.infomaniak.com/fr/ecologie">Infomaniak</a>
-		<span role="img" title="">🌱</span> — code chez <a href="https://github.com/joachimesque/abellion">GitHub</a> 🐙
+		<span role="img" title="">🌱</span> — code chez
+		<a href="https://github.com/joachimesque/abellion">GitHub</a> 🐙
 	</p>
 </footer>
 
