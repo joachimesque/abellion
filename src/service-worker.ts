@@ -5,7 +5,7 @@ const STATIC_CACHE_NAME = `cache${version}`;
 const APP_CACHE_NAME = `offline${version}`;
 
 // hard-coded list of app routes we want to preemptively cache
-const routes = ['/'];
+const routes = [];
 
 // hard-coded list of other assets necessary for page load outside our domain
 const customAssets = [];
