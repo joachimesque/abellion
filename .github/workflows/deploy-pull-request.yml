@@ -31,9 +31,9 @@ jobs:
         uses: mshick/add-pr-comment@v1
         with:
           message: |
-            **🧑‍🔧 Branch preview deployment**
+            ## 🧑‍🔧 Branch preview has been deployed!**
 
-            <https://vege.professeurjoachim.com/branches/${{ github.event.pull_request.head.ref }}/>
+            👉 <https://vege.professeurjoachim.com/branches/${{ github.event.pull_request.head.ref }}/>
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
