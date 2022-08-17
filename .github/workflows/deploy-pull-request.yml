@@ -34,5 +34,6 @@ jobs:
             **🧑‍🔧 Branch preview deployment**
 
             <https://vege.professeurjoachim.com/branches/${{ github.event.pull_request.head.ref }}/>
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
