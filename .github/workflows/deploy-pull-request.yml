@@ -26,3 +26,14 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: build/
           server-dir: branches/${{ github.event.pull_request.head.ref }}/
+
+      - name: 💬 Leave a message
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            ## 🧑‍🔧 Branch preview has been deployed!
+
+            👉 <https://vege.professeurjoachim.com/branches/${{ github.event.pull_request.head.ref }}/>
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          allow-repeats: false

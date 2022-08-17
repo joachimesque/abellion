@@ -17,4 +17,4 @@ jobs:
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           remoteDirectories: branches/${{ github.event.ref }}/
-          workingDir: "."
+          workingDir: '.'
