@@ -5,6 +5,7 @@
 	import Calendar from './Calendar.svelte';
 	import PreviewResults from './PreviewResults.svelte';
 	import TrackResults from './TrackResults.svelte';
+	import TrackSuggestions from './TrackSuggestions.svelte';
 	import Settings from './Settings.svelte';
 
 	let showSettings = false;
@@ -133,6 +134,7 @@
 
 	{#if $mode === 'track'}
 		<TrackResults {rulesImpact} {mealsImpact} />
+		<TrackSuggestions />
 	{/if}
 {/if}
 

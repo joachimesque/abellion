@@ -50,6 +50,9 @@ export const mealTypes = [
 	},
 ];
 
+export const vegOptions = ['vegan', 'vegetarian'];
+export const nonVegOptions = ['meat_1', 'meat_2', 'fish_1', 'fish_2'];
+
 export const cycleDuration = 14;
 export const mealsPerDay = ['déjeuner', 'dîner'];
 

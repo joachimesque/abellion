@@ -2,7 +2,7 @@ import { browser } from '$app/env';
 import { writable } from 'svelte/store';
 import { getEmptyMealObject } from '$lib/shared/utils';
 
-const defaultValue = getEmptyMealObject();
+const defaultValue = {};
 const initialValue = browser
 	? localStorage.getItem('cyclesHistory')
 		? JSON.parse(localStorage.getItem('cyclesHistory'))
