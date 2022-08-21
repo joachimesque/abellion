@@ -1,39 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import { cycleDuration, mealsPerDay } from '../shared/config';
-	import { startDate, cycleCalendar } from '../shared/stores';
-	import { getFormattedDay, getIntlDate } from '../shared/utils';
-	import MealsSelector from '../components/MealsSelector.svelte';
+	import { rollingCalendar, cycleCalendar, mode } from '$lib/shared/stores';
+	import { getIntlDate } from '$lib/shared/utils';
+	import MealsSelector from '$lib/components/MealsSelector.svelte';
 
-	let newCycleCalendar = {};
-	let newStartDate = $startDate ?? new Date();
 	let shadowIntensity = 0;
 	let calendarEnds = [];
-
-	const today = new Date();
-	const dayInMs = 1000 * 60 * 60 * 24;
-	const timeDifference = Math.round((today.getTime() - newStartDate.getTime()) / dayInMs);
-	const dayOfCycle = Math.round(timeDifference % cycleDuration);
-	const cycleStart = new Date(today.getTime() - dayOfCycle * dayInMs);
-
-	[...Array(cycleDuration).keys()].map((_, index) => {
-		const day = new Date(cycleStart.getTime() + index * dayInMs);
-		const formattedDay = getFormattedDay(day);
-
-		newCycleCalendar[formattedDay] = {};
-		newCycleCalendar[formattedDay].is_today = formattedDay === getFormattedDay(today);
-		newCycleCalendar[formattedDay].selection = [...Array(mealsPerDay.length).keys()].map(
-			(_, index) => {
-				if (formattedDay in $cycleCalendar) {
-					return $cycleCalendar[formattedDay].selection[index];
-				}
-				return null;
-			}
-		);
-	});
-
-	cycleCalendar.set(newCycleCalendar);
 
 	onMount(() => {
 		let scrollableContainerEl = document.querySelector('.scrollable-container');
@@ -45,9 +18,11 @@
 		});
 	});
 
+	$: calendar = $mode === 'preview' ? $rollingCalendar : $cycleCalendar;
+
 	$: {
-		const first = Object.keys($cycleCalendar)[0];
-		const last = Object.keys($cycleCalendar)[Object.keys($cycleCalendar).length - 1];
+		const first = Object.keys(calendar)[0];
+		const last = Object.keys(calendar)[Object.keys(calendar).length - 1];
 		let style = 'short';
 
 		// if different months
@@ -70,7 +45,7 @@
 	</h2>
 	<div class="scrollable-container" style="--shadow-intensity: {shadowIntensity}">
 		<div class="scrollable-container-content">
-			{#each Object.entries($cycleCalendar) as day}
+			{#each Object.entries(calendar) as day}
 				<MealsSelector {day} />
 			{/each}
 		</div>

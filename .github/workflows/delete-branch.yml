@@ -1,4 +1,5 @@
 name: Cleanup branch on delete
+
 on: [delete, workflow_dispatch]
 
 jobs:

@@ -1,18 +1,24 @@
 import { derived } from 'svelte/store';
-import { getEmptyMealObject } from '../utils';
+import { getEmptyMealObject } from '$lib/shared/utils';
 import cycleCalendar from './cycle_calendar';
+import mode from './mode';
+import rollingCalendar from './rolling_calendar';
 
-export const selectedMeals = derived(cycleCalendar, ($cycleCalendar) => {
-	const newSelectedMeals = getEmptyMealObject();
+export const selectedMeals = derived(
+	[mode, cycleCalendar, rollingCalendar],
+	([$mode, $cycleCalendar, $rollingCalendar]) => {
+		const newSelectedMeals = getEmptyMealObject();
+		const calendar = $mode === 'preview' ? $rollingCalendar : $cycleCalendar;
 
-	Object.values($cycleCalendar).forEach((day) => {
-		day.selection.forEach((meal) => {
-			if (!(meal in newSelectedMeals)) return;
-			newSelectedMeals[meal]++;
+		Object.values(calendar).forEach((day) => {
+			day.selection.forEach((meal) => {
+				if (!(meal in newSelectedMeals)) return;
+				newSelectedMeals[meal]++;
+			});
 		});
-	});
 
-	return newSelectedMeals;
-});
+		return newSelectedMeals;
+	}
+);
 
 export { selectedMeals as default };

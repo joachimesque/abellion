@@ -1,19 +1,32 @@
-import { browser } from '$app/env';
-import { writable } from 'svelte/store';
+import { derived } from 'svelte/store';
+import rollingCalendar from './rolling_calendar';
+import startDate from './start_date';
+import { cycleDuration } from '$lib/shared/config';
+import { getFormattedDay } from '$lib/shared/utils';
 
-const defaultValue = {};
-const initialValue = browser
-	? localStorage.getItem('cycleCalendar')
-		? JSON.parse(localStorage.getItem('cycleCalendar'))
-		: defaultValue
-	: defaultValue;
+export const cycleCalendar = derived(
+	[rollingCalendar, startDate],
+	([$rollingCalendar, $startDate]) => {
+		let newCycleCalendar = {};
+		if (!$startDate) return newCycleCalendar;
 
-export const cycleCalendar = writable(initialValue);
+		const today = new Date();
+		const dayInMs = 1000 * 60 * 60 * 24;
+		const timeDifference = Math.round((today.getTime() - $startDate.getTime()) / dayInMs);
+		const dayOfCycle = Math.round(timeDifference % cycleDuration);
+		const cycleStart = new Date(today.getTime() - dayOfCycle * dayInMs);
 
-cycleCalendar.subscribe((value) => {
-	if (browser) {
-		localStorage.setItem('cycleCalendar', JSON.stringify(value));
+		[...Array(cycleDuration).keys()].map((_, index) => {
+			const day = new Date(cycleStart.getTime() + index * dayInMs);
+			const formattedDay = getFormattedDay(day);
+
+			if (formattedDay in $rollingCalendar) {
+				newCycleCalendar[formattedDay] = $rollingCalendar[formattedDay];
+			}
+		});
+
+		return newCycleCalendar;
 	}
-});
+);
 
 export { cycleCalendar as default };

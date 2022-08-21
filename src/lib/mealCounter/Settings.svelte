@@ -1,6 +1,6 @@
 <script>
-	import { mealTypes, cycleDuration, mealsPerDay } from '../shared/config';
-	import { mealRules } from '../shared/stores';
+	import { mealTypes, cycleDuration, mealsPerDay } from '$lib/shared/config';
+	import { mealRules } from '$lib/shared/stores';
 
 	const numberOfMeals = cycleDuration * mealsPerDay.length;
 
@@ -29,8 +29,6 @@
 <section>
 	<h2>Réglages</h2>
 	<p>Renseignez vos repas pour un cycle de {cycleDuration} jours</p>
-
-	<p />
 
 	<div class="gaufrier">
 		{#each mealTypes as mealType}
