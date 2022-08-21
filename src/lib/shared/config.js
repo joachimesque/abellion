@@ -1,7 +1,7 @@
 export const mealTypes = [
 	{
 		name: 'vegan',
-		pretty_name: 'Végétalien',
+		pretty_name: 'Végan',
 		icon: '🌾🥜🥗',
 		description: 'Repas sans produits animaux.',
 		impact: 0.39,
