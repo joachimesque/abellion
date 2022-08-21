@@ -1,6 +1,6 @@
 import { browser } from '$app/env';
 import { writable } from 'svelte/store';
-import { getEmptyMealObject } from '../utils';
+import { getEmptyMealObject } from '$lib/shared/utils';
 
 const defaultValue = getEmptyMealObject();
 const initialValue = browser

@@ -1,6 +1,12 @@
 <script>
-	import { mealTypes, impactThreshold } from '../shared/config';
-	import { mealRules, selectedMeals } from '../shared/stores';
+	import {
+		mealTypes,
+		impactThreshold,
+		impactLocaleOptions,
+		cycleDuration,
+	} from '$lib/shared/config';
+	import { mealRules, selectedMeals } from '$lib/shared/stores';
+	import MealCounter from '$lib/components/MealCounter.svelte';
 
 	export let rulesImpact;
 	export let mealsImpact;
@@ -39,47 +45,34 @@
 			mealsAlerts[mealType.name] = alert;
 		});
 	}
+
+	$: selectedMealNumber = Object.values($selectedMeals).reduce((p, a) => p + a, 0);
 </script>
 
 <section>
 	<h2>Repas restants pour ce cycle</h2>
 	<div class="gaufrier">
 		{#each mealTypes as mealType}
-			<p class="block">
-				<span class="icon" aria-hidden="true">{mealType.icon}</span>
-				<br />
-				<span class="name">{mealType.pretty_name}</span>
-				<br />
-				<strong class="number" class:alert={mealsAlerts[mealType.name]}>
-					{mealsLeft[mealType.name] || 0}
-				</strong>
-			</p>
+			<MealCounter
+				{mealType}
+				count={mealsLeft[mealType.name] || 0}
+				alert={mealsAlerts[mealType.name]}
+			/>
 		{/each}
 	</div>
+	{#if selectedMealNumber > 0}
 	<p>
-		{mealsImpact} sur {rulesImpact}&nbsp;kCO
-		<sub>2</sub>
-		e
+		<strong class="big">
+			Impact de ce cycle de {cycleDuration} jours&nbsp;:
+			{mealsImpact.toLocaleString('fr-FR', impactLocaleOptions)}
+			sur {rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e
+		</strong>
+		{#if selectedMealNumber > 1}
+			(soit {(mealsImpact / selectedMealNumber).toLocaleString(
+				'fr-FR',
+				impactLocaleOptions
+			)}&nbsp;kCO<sub>2</sub>e par repas)
+		{/if}
 	</p>
+	{/if}
 </section>
-
-<style>
-	.block {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin: 0;
-	}
-
-	.icon {
-		font-size: 2rem;
-	}
-	.name {
-	}
-	.number {
-		font-size: 3rem;
-	}
-	.number.alert {
-		color: orangered;
-	}
-</style>

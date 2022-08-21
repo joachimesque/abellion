@@ -1,9 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import { browser } from '$app/env';
-	import { mealTypes, mealsPerDay } from '../shared/config';
-	import { cycleCalendar } from '../shared/stores';
-	import { getIntlDate } from '../shared/utils';
+	import { mealTypes, mealsPerDay } from '$lib/shared/config';
+	import { rollingCalendar } from '$lib/shared/stores';
+	import { getIntlDate } from '$lib/shared/utils';
 
 	export let day;
 
@@ -26,7 +26,7 @@
 	});
 
 	const onSelectMeal = (event, { day, meal }) => {
-		cycleCalendar.update((current) => {
+		rollingCalendar.update((current) => {
 			current[day].selection[meal] = event.target.value;
 			return current;
 		});

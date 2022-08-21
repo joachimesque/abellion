@@ -1,7 +1,7 @@
 export const mealTypes = [
 	{
 		name: 'vegan',
-		pretty_name: 'Végétalien',
+		pretty_name: 'Végan',
 		icon: '🌾🥜🥗',
 		description: 'Repas sans produits animaux.',
 		impact: 0.39,
@@ -49,6 +49,9 @@ export const mealTypes = [
 		impact: 1.98,
 	},
 ];
+
+export const vegOptions = ['vegan', 'vegetarian'];
+export const nonVegOptions = ['meat_1', 'meat_2', 'fish_1', 'fish_2'];
 
 export const cycleDuration = 14;
 export const mealsPerDay = ['déjeuner', 'dîner'];

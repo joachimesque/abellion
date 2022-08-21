@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { startDate } from '../shared/stores';
+	import { startDate } from '$lib/shared/stores';
 
 	let erased;
 

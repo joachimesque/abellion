@@ -1,19 +1,28 @@
-import { browser } from '$app/env';
-import { writable } from 'svelte/store';
+import { derived } from 'svelte/store';
+import { dayInMs } from '$lib/shared/constants';
+import rollingCalendar from './rolling_calendar';
+import cycleStartDate from './cycle_start_date';
+import startDate from './start_date';
+import { cycleDuration } from '$lib/shared/config';
+import { getFormattedDay } from '$lib/shared/utils';
 
-const defaultValue = {};
-const initialValue = browser
-	? localStorage.getItem('cycleCalendar')
-		? JSON.parse(localStorage.getItem('cycleCalendar'))
-		: defaultValue
-	: defaultValue;
+export const cycleCalendar = derived(
+	[rollingCalendar, cycleStartDate, startDate],
+	([$rollingCalendar, $cycleStartDate, $startDate]) => {
+		let newCycleCalendar = {};
+		if (!$startDate) return newCycleCalendar;
 
-export const cycleCalendar = writable(initialValue);
+		[...Array(cycleDuration).keys()].map((_, index) => {
+			const day = new Date($cycleStartDate.getTime() + index * dayInMs);
+			const formattedDay = getFormattedDay(day);
 
-cycleCalendar.subscribe((value) => {
-	if (browser) {
-		localStorage.setItem('cycleCalendar', JSON.stringify(value));
+			if (formattedDay in $rollingCalendar) {
+				newCycleCalendar[formattedDay] = $rollingCalendar[formattedDay];
+			}
+		});
+
+		return newCycleCalendar;
 	}
-});
+);
 
 export { cycleCalendar as default };

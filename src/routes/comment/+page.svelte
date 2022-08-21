@@ -5,6 +5,17 @@
 <div class="content">
 	<h1>Comment manger moins de viande</h1>
 
+	<h2>Surveiller ses repas</h2>
+
+	<h2>Aller piocher chez les voisins</h2>
+
+	<p>
+		Voir du côté de la cuisine libanaise, thaï, indienne ou italienne, elles regorgent d’options
+		végétariennes.
+	</p>
+
+	<h2>Envisager ses menus différemment</h2>
+
 	<h2>Bibliographie</h2>
 
 	<p>Les livres, c’est pas ce qui manque</p>
