@@ -21,8 +21,8 @@
 	$: calendar = $mode === 'preview' ? $rollingCalendar : $cycleCalendar;
 
 	$: {
-		const first = Object.keys(calendar)[0];
-		const last = Object.keys(calendar)[Object.keys(calendar).length - 1];
+		const first = Object.keys(calendar).sort()[0];
+		const last = Object.keys(calendar).sort().reverse()[0];
 		let style = 'short';
 
 		// if different months

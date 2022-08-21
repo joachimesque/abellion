@@ -9,7 +9,10 @@ export const getEmptyMealObject = () => {
 export const getFormattedDay = (date) => {
 	if (!(date instanceof Date)) return date;
 
-	return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+	return `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}-${date
+		.getDate()
+		.toString()
+		.padStart(2, 0)}`;
 };
 
 export const getIntlDate = (date, style = 'long') => {
