@@ -91,7 +91,11 @@
 	</p>
 
 	<p>
-		Au fur et à mesure de votre utilisation de l’outil, vous allez peut-être faire évoluer votre alimentation. Dans le cas où vous réduisez votre consommation de viande pendant au moins {tallySampleSize} sur les {tallyImprovementThreshold} derniers cycles, une section apparaît pour vous montrer les types de repas que vous n’avez pas consommés. Cette section présente en outre les gains en matière d’impact carbone sur votre alimentation si vous changez vos objectifs.
+		Au fur et à mesure de votre utilisation de l’outil, vous allez peut-être faire évoluer votre
+		alimentation. Dans le cas où vous réduisez votre consommation de viande pendant au moins {tallySampleSize}
+		sur les {tallyImprovementThreshold} derniers cycles, une section apparaît pour vous montrer les types
+		de repas que vous n’avez pas consommés. Cette section présente en outre les gains en matière d’impact
+		carbone sur votre alimentation si vous changez vos objectifs.
 	</p>
 
 	<h3 id="les-repas">Les repas en détail</h3>
@@ -119,7 +123,8 @@
 				<strong>{meal.pretty_name}</strong>
 				({getLocalizedNumber(meal.impact)}&nbsp;<abbr
 					title="kilos de gaz à effet de serre en équivalent dioxyde de carbone"
-				>kCO<sub>2</sub>e</abbr>)&nbsp;:
+					>kCO<sub>2</sub>e</abbr
+				>)&nbsp;:
 				{meal.description}
 			</li>
 		{/each}
@@ -152,8 +157,12 @@
 			>un hébergeur engagé sur les questions écologiques</a
 		>.<br />
 		Les fichiers sont statiques, les ressources côté serveur sont gardées au minimum. L’application ne
-		transmet pas de données. Aucun traçage des visites, aucun mouchard ni aucune requête auprès d’un
-		quelconque service en ligne.
+		transmet pas de données. Le service n’utilise aucun traçage des visites, aucun mouchard ni aucune
+		requête auprès d’un quelconque service en ligne. L’industrie de la surveillance sur Internet est
+		une cause du poids extrême des sites web, d’une quantité énorme de transmission et de traîtement
+		d’informations personnelles destinées à être revendues aux enchères aux annonceurs de publicité les
+		plus offrants. C’est avec fierté que ce site ne participe pas à ces systèmes parasites trop gourmands
+		en énergie et en matériel.
 	</p>
 </div>
 

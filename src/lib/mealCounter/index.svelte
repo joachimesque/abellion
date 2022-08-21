@@ -144,6 +144,9 @@
 	Chargement des données…
 {/if}
 
-<div>
-	<small>Si vous voulez effacer les données que ce site stocke sur votre ordinateur, cliquez ici&nbsp;: <EraseButton /></small>
+<div class="spaced-top">
+	<small
+		>Si vous voulez effacer les données que ce site stocke sur votre ordinateur, cliquez ici&nbsp;: <EraseButton
+		/></small
+	>
 </div>

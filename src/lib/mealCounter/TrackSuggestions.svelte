@@ -84,10 +84,9 @@
 					<option value={vegOpt.name}>{vegOpt.pretty_name}</option>
 				{/each}
 			</select>, vous pouvez économiser
-			<strong>{getLocalizedNumber(totalGains)}</strong>&nbsp;kCO<sub>2</sub
-			>e par cycle, soit
-			<strong>{getLocalizedNumber(getRulesImpactYear(totalGains))}</strong
-			>&nbsp;tCO<sub>2</sub>e par an.
+			<strong>{getLocalizedNumber(totalGains)}</strong>&nbsp;kCO<sub>2</sub>e par cycle, soit
+			<strong>{getLocalizedNumber(getRulesImpactYear(totalGains))}</strong>&nbsp;tCO<sub>2</sub>e
+			par an.
 		</div>
 	</section>
 {/if}

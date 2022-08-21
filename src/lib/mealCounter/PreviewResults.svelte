@@ -23,7 +23,7 @@
 				{getLocalizedNumber(mealsImpact)}&nbsp;kCO<sub>2</sub>e
 			</strong>
 			{#if selectedMealNumber > 1}
-			soit {getLocalizedNumber(mealsImpact / selectedMealNumber)}&nbsp;kCO<sub>2</sub>e par repas
+				soit {getLocalizedNumber(mealsImpact / selectedMealNumber)}&nbsp;kCO<sub>2</sub>e par repas
 			{/if}
 		</p>
 	{/if}

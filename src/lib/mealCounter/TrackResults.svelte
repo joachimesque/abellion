@@ -1,9 +1,5 @@
 <script>
-	import {
-		mealTypes,
-		impactThreshold,
-		cycleDuration,
-	} from '$lib/shared/config';
+	import { mealTypes, impactThreshold, cycleDuration } from '$lib/shared/config';
 	import { getLocalizedNumber } from '$lib/shared/utils';
 	import { mealRules, selectedMeals } from '$lib/shared/stores';
 	import MealCounter from '$lib/components/MealCounter.svelte';
@@ -61,15 +57,16 @@
 		{/each}
 	</div>
 	{#if selectedMealNumber > 0}
-	<p>
-		<strong class="big">
-			Impact de ce cycle de {cycleDuration} jours&nbsp;:
-			{getLocalizedNumber(mealsImpact)}
-			sur {getLocalizedNumber(rulesImpact)}&nbsp;kCO<sub>2</sub>e
-		</strong>
-		{#if selectedMealNumber > 1}
-			(soit {getLocalizedNumber(mealsImpact / selectedMealNumber)}&nbsp;kCO<sub>2</sub>e par repas)
-		{/if}
-	</p>
+		<p>
+			<strong class="big">
+				Impact de ce cycle de {cycleDuration} jours&nbsp;:
+				{getLocalizedNumber(mealsImpact)}
+				sur {getLocalizedNumber(rulesImpact)}&nbsp;kCO<sub>2</sub>e
+			</strong>
+			{#if selectedMealNumber > 1}
+				(soit {getLocalizedNumber(mealsImpact / selectedMealNumber)}&nbsp;kCO<sub>2</sub>e par
+				repas)
+			{/if}
+		</p>
 	{/if}
 </section>

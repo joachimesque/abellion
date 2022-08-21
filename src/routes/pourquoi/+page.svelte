@@ -35,7 +35,13 @@
 
 	<h2>Impact de la viande sur la santé</h2>
 
-	<p class="big">On mange trop de viande. (Didier Rémond, <a href="https://hal.archives-ouvertes.fr/hal-01595673/file/2016_R%C3%A9mond_Prot%C3%A9ines%20animales_JNGTV_Nantes_1.pdf">Protéines animales – protéines végétales&nbsp;: Quel équilibre pour une alimentation saine et durable ?</a></p>
+	<p class="big">
+		On mange trop de viande. (Didier Rémond, <a
+			href="https://hal.archives-ouvertes.fr/hal-01595673/file/2016_R%C3%A9mond_Prot%C3%A9ines%20animales_JNGTV_Nantes_1.pdf"
+			>Protéines animales – protéines végétales&nbsp;: Quel équilibre pour une alimentation saine et
+			durable ?</a
+		>
+	</p>
 
 	<h2>Impact de la viande sur le portefeuille</h2>
 

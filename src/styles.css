@@ -35,6 +35,10 @@ footer {
 	gap: 2rem 1rem;
 }
 
+.spaced-top {
+	margin-top: 8vh;
+}
+
 @media (min-width: 40rem) {
 	body {
 		padding: 2em;
