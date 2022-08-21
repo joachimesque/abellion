@@ -45,6 +45,8 @@
 			mealsAlerts[mealType.name] = alert;
 		});
 	}
+
+	$: selectedMealNumber = Object.values($selectedMeals).reduce((p, a) => p + a, 0);
 </script>
 
 <section>
@@ -65,7 +67,7 @@
 			{mealsImpact.toLocaleString('fr-FR', impactLocaleOptions)}
 			sur {rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e
 		</strong>
-		(soit {(mealsImpact / (cycleDuration * 2)).toLocaleString(
+		(soit {(mealsImpact / selectedMealNumber).toLocaleString(
 			'fr-FR',
 			impactLocaleOptions
 		)}&nbsp;kCO<sub>2</sub>e par repas)
