@@ -1,19 +1,17 @@
 import { derived } from 'svelte/store';
 import cyclesHistory from './cycles_history';
 import mealRules from './meal_rules';
-import { nonVegOptions } from '$lib/shared/config';
+import { nonVegOptions, tallySampleSize, tallyImprovementThreshold } from '$lib/shared/config';
 
-const sampleSize = 4;
-const improvementThreshold = 3;
 const defaultValue = {};
 
 export const cyclesTally = derived([cyclesHistory, mealRules], ([$cyclesHistory, $mealRules]) => {
 	const historyKeys = Object.keys($cyclesHistory);
 
-	if (historyKeys.length < sampleSize) return defaultValue;
+	if (historyKeys.length < tallySampleSize) return defaultValue;
 
 	// Get 4 last cycles from history
-	const sampledCyclesKeys = historyKeys.sort().slice(-sampleSize);
+	const sampledCyclesKeys = historyKeys.sort().slice(-tallySampleSize);
 
 	// Compare each cycle to mealRules
 	// Returns object:
@@ -42,7 +40,7 @@ export const cyclesTally = derived([cyclesHistory, mealRules], ([$cyclesHistory,
 			if (failed.length === 0) {
 				status = 'success';
 
-				if (improved.length >= improvementThreshold) {
+				if (improved.length >= tallyImprovementThreshold) {
 					status = 'improved';
 				}
 			}

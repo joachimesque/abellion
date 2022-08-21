@@ -1,6 +1,6 @@
 <script>
 	import { base } from '$app/paths';
-	import { impactLocaleOptions, mealTypes } from '$lib/shared/config';
+	import { mealTypes, tallySampleSize, tallyImprovementThreshold } from '$lib/shared/config';
 	import { getLocalizedNumber } from '$lib/shared/utils';
 </script>
 
@@ -88,6 +88,10 @@
 		Le bloc de résultats présente les repas à consommer pendant le reste du cycle pour respecter vos
 		objectifs. Sous ces résultats, vous verrez l’impact de ces repas à l’échelle du cycle, comparé
 		au total prévu par vos objectifs.
+	</p>
+
+	<p>
+		Au fur et à mesure de votre utilisation de l’outil, vous allez peut-être faire évoluer votre alimentation. Dans le cas où vous réduisez votre consommation de viande pendant au moins {tallySampleSize} sur les {tallyImprovementThreshold} derniers cycles, une section apparaît pour vous montrer les types de repas que vous n’avez pas consommés. Cette section présente en outre les gains en matière d’impact carbone sur votre alimentation si vous changez vos objectifs.
 	</p>
 
 	<h3 id="les-repas">Les repas en détail</h3>

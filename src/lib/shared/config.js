@@ -58,6 +58,9 @@ export const mealsPerDay = ['déjeuner', 'dîner'];
 
 export const impactThreshold = 1;
 
+export const tallySampleSize = 4;
+export const tallyImprovementThreshold = 3;
+
 export const locale = "fr-FR"
 export const impactLocaleOptions = {
 	minimumFractionDigits: 2,
