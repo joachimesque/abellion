@@ -134,7 +134,7 @@
 
 	{#if $mode === 'track'}
 		<TrackResults {rulesImpact} {mealsImpact} />
-		<TrackSuggestions />
+		<TrackSuggestions {getRulesImpactYear} />
 	{/if}
 {/if}
 
