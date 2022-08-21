@@ -2,14 +2,14 @@ export const mealTypes = [
 	{
 		name: 'vegan',
 		pretty_name: 'Végan',
-		icon: '🌾🥜🥗',
+		icon: '🥜🥗',
 		description: 'Repas sans produits animaux.',
 		impact: 0.39,
 	},
 	{
 		name: 'vegetarian',
 		pretty_name: 'Végétarien',
-		icon: '🥗🍳🧀',
+		icon: '🍳🧀',
 		description: 'Repas sans chair animale, avec des oeufs ou un peu de fromage.',
 		impact: 0.51,
 	},
@@ -23,7 +23,7 @@ export const mealTypes = [
 	{
 		name: 'meat_1',
 		pretty_name: 'Viande 1',
-		icon: '🍗🥓🧀',
+		icon: '🍗🥓',
 		description: 'Repas contenant une pièce de poulet, porc, ou fromage.',
 		impact: 1.35,
 	},
