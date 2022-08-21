@@ -130,15 +130,56 @@
 		{/each}
 	</ul>
 
-	<h2>
+	<h2 id="limites">Les limites</h2>
+
+	<h3 id="petits-gestes">
+		Les petits gestes ne sont pas une fin en soi
+		<br />
+		<small>(mais ils sont absolument nécessaires)</small>
+	</h3>
+
+	<p>
+		Le débat autour de l’utilité des “petits gestes” individuels revient souvent quand on discute
+		d’environnement. Évidemment, adopter un régime végétal est bien une action individuelle, les
+		végan·es ou végétarien·nes ne s’y trompent pas&nbsp;: la première action, c’est d’arrêter de
+		consommer des produits animaux. Un·e activiste pour le bien-être animal qui ne changerait pas
+		son alimentation pour être raccord avec ses idées et paroles serait la risée de la société. Ce
+		“petit geste” est primordial, sans quoi il serait hypocrite de dénoncer quoi que ce soit sur le
+		sujet. C’est aussi une action qui montre l’exemple&nbsp;: j’y arrive, donc c’est possible et je
+		peux te montrer comment y arriver.
+	</p>
+
+	<p>
+		En revanche, la portée des actions individuelles est limitée. Le rapport <a
+			href="https://www.carbone4.com/publication-faire-sa-part"
+			>Faire sa part&nbsp;? du cabinet Carbone 4</a
+		> le montre bien, 75&nbsp;% de la réduction nécessaire de l’impact de nos modes de vie ne peuvent
+		être entrepris que par l’action collective de la société. Si on s’en tient à nos “petits gestes”
+		on ne fera pas grand chose—mais si on ne fait même pas cet effort, nos revendications ne pourront
+		pas être prises au sérieux, nos alternatives continueront à être ignorées. Les actions individuelles
+		ou de grande envergure ne sont pas incompatibles, bien au contraire.
+	</p>
+
+	<p>
+		Une fois qu’on a dépassé cette opposition, il faut construire là-dessus. Pour ça, deux actions
+		sont plus grandes que les petits gestes mais accessibles à tout le monde. D’une part il faut
+		parler des crises environnementales provoquées par nos sociétés, et convaincre d’autres
+		personnes d’adopter eux aussi des actions en faveur de l’environnement&nbsp;; c’est pour ça que
+		donner l’exemple est si important. D’autre part il faut s’engager dans les collectifs, les
+		actions, le monde politique, etc. C’est dans ces contextes-là, quand beaucoup de monde se
+		rassemble, que les rapports de force se font. Et c’est seulement des rapports de force en notre
+		faveur qui pourront faire avancer les choses.
+	</p>
+
+	<h3 id="technologie">
 		La technologie ne nous sauvera pas
 		<br />
-		<small>(mais elle peut rendre certaines choses plus faciles)</small>
-	</h2>
+		<small>(mais elle peut faciliter certaines choses)</small>
+	</h3>
 
 	<p class="big">
-		Méfiez-vous des solutions technologiques. Les problèmes environnementaux actuels proviennent des
-		systèmes économiques et sociaux qui sous-tendent nos vies (même le
+		Il faut se méfier des solutions technologiques. Les problèmes environnementaux actuels
+		proviennent des systèmes économiques et sociaux qui sous-tendent nos vies (même le
 		<abbr title="Groupe International d’Experts sur le Climat">GIEC</abbr> le dit)&nbsp;; ces
 		problèmes ne pourront pas être résolus avec une énième app ou un énième concept tech qui ne
 		remet pas radicalement en cause le <em>status quo</em>.
@@ -146,10 +187,12 @@
 
 	<p>
 		Ce n’est pas ce site qui va changer la donne. Mais qui sait, peut-être qu’il pourra vous
-		accompagner vers un régime moins carné, voire végétarien ou vegan. Et à partir de là, quelles
+		accompagner vers un régime moins carné, voire végétarien ou végan. Et à partir de là, quelles
 		sont les questions que vous vous poserez sur les autres facteurs d’émissions dont vous êtes (au
 		moins un petit peu) responsables&nbsp;?
 	</p>
+
+	<h2>Mention sur l’hébergement du site et vos données</h2>
 
 	<p>
 		Ce site est hébergé chez Infomaniak,

@@ -9,38 +9,55 @@
 		<small>(voire d’arrêter complètement)</small>
 	</h1>
 
-	<p>
-		L’auteur de ce site n’est pas (encore) végétarien. En revanche, les externalités négatives de
-		l’élevage intensif lui ont ouvert les yeux
-	</p>
-
 	<h2>Impact de la viande sur le climat</h2>
 
+	<p>14,5&nbsp;% des émissions mondiales de gaz à effet de serre proviennent de l’élevage.</p>
 	<p>
-		15&nbsp;% des émissions de CO
-		<sub>2</sub>
-		proviennent de l’élevage intensif.
+		L’élevage provoque la déforestation à travers le monde&nbsp;: c’est le cas de l’Amazonie, où la
+		forêt primaire, poumon de la planète, est coupée pour faire place à des cultures de soja,
+		utilisé en immense majorité pour nourrir les animaux d’élevage du monde entier.
+	</p>
+
+	<p>
+		Une vidéo du Monde&nbsp;: <a
+			href="https://www.lemonde.fr/planete/video/2015/03/20/le-vrai-poids-de-la-viande-sur-l-environnement_4597689_3244.html"
+			>4 minutes pour comprendre le vrai poids de la viande sur l'environnement</a
+		>
 	</p>
 
 	<h2>Impact de la viande sur le cycle de l’eau</h2>
 
 	<p>
-		Il faut vingt fois plus d’eau pour produire une calorie venant d’un morceau de bœuf qu’une
-		calorie venant d’une pomme de terre, et il faut plus de cinq fois la quantité d’eau pour faire
-		un kilo de protéines à partir de bœuf plutôt qu’à partir de légumineuses (haricot, etc.) ou de
-		céréales.
+		Il faut presque deux fois plus d’eau pour produire un kilo de protéine de viande de bœuf que
+		pour un kilo de protéine de légumineuse ou de céréales. Les canicules qui se sont succédé à
+		l’été 2022 doivent nous faire adopter des méthodes de production de nourriture bien plus
+		économes en eau, à ce titre la viande ne sera pas une solution aussi pertinente que les
+		végétaux.
 	</p>
 
-	<h2>Impact de la viande sur la biodiversité</h2>
+	<p>
+		Les nitrates et phosphates émis par l’élevage via les rejets de lisiers ou les engrais des
+		cultures fourragères se retrouvent dans les cours d’eau puis dans la mer, ce qui provoque la
+		prolifération d’algues vertes. Ces proliférations entrainent des phénomènes d’hypoxie, où des
+		“zones mortes” aquatiques n’ont plus assez d’oxygène pour soutenir la vie. Bien d’autres types
+		de pollution de l’eau sont dues à l’élevage&nbsp;: antibiotiques, hormones, engrais et
+		pesticides utilisés pour les fourrages, résidus de tanneries…
+	</p>
 
 	<h2>Impact de la viande sur la santé</h2>
 
-	<p class="big">
-		On mange trop de viande. (Didier Rémond, <a
-			href="https://hal.archives-ouvertes.fr/hal-01595673/file/2016_R%C3%A9mond_Prot%C3%A9ines%20animales_JNGTV_Nantes_1.pdf"
-			>Protéines animales – protéines végétales&nbsp;: Quel équilibre pour une alimentation saine et
-			durable ?</a
-		>
+	<p>
+		Plusieurs maladies sont encouragées par la surconsommation de viande rouge&nbsp;: diabète de
+		type 2, cancer du côlon ou maladies cardio-vasculaires. D’autres cancers sont liés à la
+		consommation de viande en général, ou à la consommation de charcuterie (via l’ajout de nitrites
+		dans les procédés industriels).
+	</p>
+
+	<p>
+		En plus des maladies liées à la consommation de viande, un très grand nombre de maladies peuvent
+		être transmises des animaux aux humains. Les animaux d’élevage ont été la cause d’épidémies
+		comme la grippe aviaire, tandis que des animaux sauvages capturés pour la consommation humaine
+		sont soupçonnés d’être à l’origine de la pandémie de Covid-19.
 	</p>
 
 	<h2>Impact de la viande sur le portefeuille</h2>
