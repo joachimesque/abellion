@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import { mealTypes, cycleDuration, impactLocaleOptions, mealsPerDay } from '$lib/shared/config';
 	import { mealRules, startDate, selectedMeals, mode } from '$lib/shared/stores';
+	import { getLocalizedNumber } from '$lib/shared/utils';
 	import EraseButton from '$lib/components/EraseButton.svelte';
 	import Calendar from './Calendar.svelte';
 	import PreviewResults from './PreviewResults.svelte';
@@ -54,7 +55,7 @@
 	<p>
 		Impact de votre choix de menus&nbsp;:
 		<strong>
-			{rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr
+			{getLocalizedNumber(rulesImpact)}&nbsp;<abbr
 				title="kilos de gaz à effet de serre en équivalent dioxyde de carbone"
 			>
 				kCO<sub>2</sub>e
@@ -62,7 +63,7 @@
 		</strong>
 		{' '} pour {cycleDuration} jours, ou
 		<strong>
-			{rulesImpactYear.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr
+			{getLocalizedNumber(rulesImpactYear)}&nbsp;<abbr
 				title="tonnes de gaz à effet de serre en équivalent dioxyde de carbone"
 			>
 				tCO<sub>2</sub>e
@@ -81,7 +82,7 @@
 	<p>
 		Impact de votre choix de menus&nbsp;:
 		<strong>
-			{rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr
+			{getLocalizedNumber(rulesImpact)}&nbsp;<abbr
 				title="kilos de gaz à effet de serre en équivalent dioxyde de carbone"
 			>
 				kCO<sub>2</sub>e
@@ -89,7 +90,7 @@
 		</strong>
 		{' '} pour {cycleDuration} jours, ou
 		<strong>
-			{rulesImpactYear.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;<abbr
+			{getLocalizedNumber(rulesImpactYear)}&nbsp;<abbr
 				title="tonnes de gaz à effet de serre en équivalent dioxyde de carbone"
 			>
 				tCO<sub>2</sub>e

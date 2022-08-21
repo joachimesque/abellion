@@ -1,6 +1,7 @@
 <script>
 	import { base } from '$app/paths';
 	import { impactLocaleOptions, mealTypes } from '$lib/shared/config';
+	import { getLocalizedNumber } from '$lib/shared/utils';
 </script>
 
 <svelte:head>
@@ -111,12 +112,10 @@
 		{#each mealTypes as meal}
 			<li>
 				<span role="img" title="">{meal.icon}</span>
-				<strong>{meal.pretty_name}</strong> ({meal.impact.toLocaleString(
-					'fr-FR',
-					impactLocaleOptions
-				)}&nbsp;<abbr title="kilos de gaz à effet de serre en équivalent dioxyde de carbone">
-					kCO<sub>2</sub>e
-				</abbr>)&nbsp;:
+				<strong>{meal.pretty_name}</strong>
+				({getLocalizedNumber(meal.impact)}&nbsp;<abbr
+					title="kilos de gaz à effet de serre en équivalent dioxyde de carbone"
+				>kCO<sub>2</sub>e</abbr>)&nbsp;:
 				{meal.description}
 			</li>
 		{/each}
