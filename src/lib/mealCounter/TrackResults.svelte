@@ -60,16 +60,19 @@
 			/>
 		{/each}
 	</div>
-
+	{#if selectedMealNumber > 0}
 	<p>
 		<strong class="big">
 			Impact de ce cycle de {cycleDuration} jours&nbsp;:
 			{mealsImpact.toLocaleString('fr-FR', impactLocaleOptions)}
 			sur {rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e
 		</strong>
-		(soit {(mealsImpact / selectedMealNumber).toLocaleString(
-			'fr-FR',
-			impactLocaleOptions
-		)}&nbsp;kCO<sub>2</sub>e par repas)
+		{#if selectedMealNumber > 1}
+			(soit {(mealsImpact / selectedMealNumber).toLocaleString(
+				'fr-FR',
+				impactLocaleOptions
+			)}&nbsp;kCO<sub>2</sub>e par repas)
+		{/if}
 	</p>
+	{/if}
 </section>
