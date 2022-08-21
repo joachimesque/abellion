@@ -1,7 +1,3 @@
-<script>
-	import EraseButton from './EraseButton.svelte';
-</script>
-
 <footer>
 	<p class="small">
 		Ce site web n’utilise pas de cookie 🍪, promis. En revanche il stocke vos préférences dans des
@@ -10,9 +6,6 @@
 		donnée sur les visites n’est transférée, stockée, vendue, échangée, manipulée, acquise, volée, chapardée,
 		mise aux enchères, clin-d’œil-clin-d’œil-légalement-montrée-à-des-tierces-parties-t’as-compris-j’te-cligne,
 		ou rien de la sorte. Les compteurs de visites c’est pour les nullos.
-		<br />
-		Si vous voulez effacer les données que ce site stocke sur votre ordinateur, cliquez ici&nbsp;:
-		<EraseButton />
 	</p>
 	<p>
 		Une production <a href="https://joachimesque.com">Joachimesque</a>

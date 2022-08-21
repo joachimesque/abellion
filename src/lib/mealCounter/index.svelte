@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import { mealTypes, cycleDuration, impactLocaleOptions, mealsPerDay } from '$lib/shared/config';
 	import { mealRules, startDate, selectedMeals, mode } from '$lib/shared/stores';
+	import EraseButton from '$lib/components/EraseButton.svelte';
 	import Calendar from './Calendar.svelte';
 	import PreviewResults from './PreviewResults.svelte';
 	import TrackResults from './TrackResults.svelte';
@@ -141,3 +142,7 @@
 {#if !$mode}
 	Chargement des données…
 {/if}
+
+<div>
+	<small>Si vous voulez effacer les données que ce site stocke sur votre ordinateur, cliquez ici&nbsp;: <EraseButton /></small>
+</div>
