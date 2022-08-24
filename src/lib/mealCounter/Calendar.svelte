@@ -69,6 +69,7 @@
 		gap: 1rem;
 		padding-bottom: 1rem;
 		background-color: var(--color-background-calendar);
+		scroll-snap-type: inline proximity;
 	}
 
 	.scrollable-container::before,
