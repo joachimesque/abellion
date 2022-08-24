@@ -1,6 +1,6 @@
 import { derived } from 'svelte/store';
 import { dayInMs } from '$lib/shared/constants';
-import startDate from './start_date';
+import startDate from './startDate';
 import { cycleDuration } from '$lib/shared/config';
 
 const today = new Date();
