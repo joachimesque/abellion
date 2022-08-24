@@ -1,6 +1,7 @@
 <script>
 	import { mealTypes, cycleDuration, mealsPerDay } from '$lib/shared/config';
 	import { mealRules } from '$lib/shared/stores';
+	import Presets from '$lib/components/Presets.svelte';
 
 	const numberOfMeals = cycleDuration * mealsPerDay.length;
 
@@ -50,6 +51,9 @@
 			</div>
 		{/each}
 	</div>
+
+	<Presets />
+
 	<p aria-live="polite">
 		{#if rulesLeftToSelect > 0}
 			Sélectionnez encore {rulesLeftToSelect} repas
