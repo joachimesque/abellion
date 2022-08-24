@@ -6,7 +6,7 @@
 </script>
 
 
-<details open={openPresets}>
+<details>
   <summary>
     Ou adoptez un pré-réglage
   </summary>
