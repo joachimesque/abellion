@@ -13,12 +13,12 @@
 		.map((item) => {
 			return { ...item, pretty_name: `tout ${item.pretty_name}` };
 		});
+
 	vegOptionsSelect.push({
 		name: 'mix',
 		pretty_name: '50/50 Végé/Végan',
 		impact: vegOptionsSelect.reduce((a, b) => a + b.impact, 0) / vegOptionsSelect.length,
 	});
-	console.log();
 
 	let selectedVegOption = vegOptionsSelect[0];
 
