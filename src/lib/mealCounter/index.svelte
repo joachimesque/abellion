@@ -37,6 +37,8 @@
 	};
 </script>
 
+<h1 class="sr-only">Décarbonnez votre alimentation</h1>
+
 {#if $mode === 'preview'}
 	<p>
 		Mode&nbsp;: <strong>Aperçu de vos repas</strong>
