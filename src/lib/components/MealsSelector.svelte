@@ -60,7 +60,7 @@
 <style>
 	.day {
 		scroll-snap-align: center;
-		
+
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
