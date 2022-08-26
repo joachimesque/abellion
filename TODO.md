@@ -6,11 +6,18 @@
 
 ## Features
 
+- [ ] UX / UI
 - [x] Enregistrer la PWA
-- [ ] Ajouter deux modes (découverte vs objectifs)
-- [ ] Ajouter des réglages ("Vegan complet", "Vegan/Végétarien" (14/14), "10/10/8", "Viandard" (Viande tous les jours))
-- [ ] Ajout de suggestions après quelques cycles
+- [x] Ajouter deux modes (découverte vs objectifs)
+- [-] Ajouter des réglages ("Vegan complet", "Vegan/Végétarien" (14/14), "10/10/8", "Viandard" (Viande tous les jours))
+- [x] Ajout de suggestions après quelques cycles
 
-## Content
+## Contenu
 
-- [ ] Compléter tous les textes
+- [-] Compléter tous les textes
+
+## Doc
+
+- [ ] Amélioration du README
+- [ ] Wiki
+- [ ] Modèles de contribution ?
