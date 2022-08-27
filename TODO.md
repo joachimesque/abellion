@@ -12,6 +12,7 @@
 - [ ] Ajouter des réglages ("Vegan complet", "Vegan/Végétarien" (14/14), "10/10/8", "Viandard" (Viande tous les jours))
 - [x] Ajout de suggestions après quelques cycles
 - [ ] Synchronisation entre plusieurs clients
+- [ ] Notifications quotidiennes (besoin d’un serveur pour envoyer les notifs push)
 
 ## Contenu
 
