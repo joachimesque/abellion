@@ -11,14 +11,7 @@
 	export let rulesImpact;
 	export let mealsImpact;
 
-	let mealsLeft = {};
 	let mealsAlerts = {};
-
-	$: {
-		Object.keys($selectedMeals).forEach((key) => {
-			mealsLeft[key] = Math.max(0, $mealRules[key] - $selectedMeals[key]);
-		});
-	}
 
 	$: {
 		mealTypes.forEach((mealType) => {
@@ -30,15 +23,12 @@
 			}
 
 			// Meal rule is not broken
-			if (mealsLeft[mealType.name] > 0) {
+			if ($mealRules[mealType.name] > $selectedMeals[mealType.name]) {
 				alert = false;
 			}
 
 			// Meal rule is 0 AND no meal has been selected
-			if (
-				$mealRules[mealType.name] === mealsLeft[mealType.name] &&
-				$selectedMeals[mealType.name] === 0
-			) {
+			if ($mealRules[mealType.name] === 0 && $selectedMeals[mealType.name] === 0) {
 				alert = false;
 			}
 
@@ -50,12 +40,14 @@
 </script>
 
 <section>
-	<h2>Repas restants pour ce cycle</h2>
+	<h2>Repas enregistrés pour ce cycle</h2>
 	<div class="gaufrier">
 		{#each mealTypes as mealType}
 			<MealCounter
 				{mealType}
-				count={mealsLeft[mealType.name] || 0}
+				count={`<span>${$selectedMeals[mealType.name]}</span>/<span>${
+					$mealRules[mealType.name]
+				}</span>`}
 				alert={mealsAlerts[mealType.name]}
 			/>
 		{/each}
