@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 	import { mealTypes, mealsPerDay } from '$lib/shared/config';
 	import { rollingCalendar } from '$lib/shared/stores';
 	import { getIntlDate } from '$lib/shared/utils';

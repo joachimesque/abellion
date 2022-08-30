@@ -1,4 +1,4 @@
-import { browser } from '$app/env';
+import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
 import { cycleDuration, mealsPerDay } from '$lib/shared/config';
 import { getFormattedDay } from '$lib/shared/utils';
