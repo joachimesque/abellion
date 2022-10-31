@@ -72,6 +72,10 @@
 		scroll-snap-type: inline proximity;
 	}
 
+	.scrollable-container-content :global(> *) {
+		scroll-snap-align: center;
+	}
+
 	.scrollable-container::before,
 	.scrollable-container::after {
 		content: '';

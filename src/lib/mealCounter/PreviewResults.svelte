@@ -22,10 +22,10 @@
 				{mealsImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e
 			</strong>
 			{#if selectedMealNumber > 1}
-			soit {(mealsImpact / selectedMealNumber).toLocaleString(
-				'fr-FR',
-				impactLocaleOptions
-			)}&nbsp;kCO<sub>2</sub>e par repas
+				soit {(mealsImpact / selectedMealNumber).toLocaleString(
+					'fr-FR',
+					impactLocaleOptions
+				)}&nbsp;kCO<sub>2</sub>e par repas
 			{/if}
 		</p>
 	{/if}

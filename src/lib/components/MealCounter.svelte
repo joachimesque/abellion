@@ -9,7 +9,7 @@
 	<br />
 	<span class="name">{mealType.pretty_name}</span>
 	<br />
-	<strong class="number" class:alert>{count}</strong>
+	<strong class="number" class:alert>{@html count}</strong>
 </p>
 
 <style>
@@ -30,5 +30,13 @@
 	}
 	.number.alert {
 		color: orangered;
+	}
+	.number :global(span:first-of-type) {
+		font-size: 2.6rem;
+		vertical-align: top;
+	}
+	.number :global(span:last-of-type) {
+		font-size: 2rem;
+		vertical-align: bottom;
 	}
 </style>
