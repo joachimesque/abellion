@@ -1,7 +1,8 @@
 <script>
 	import { mealTypes, cycleDuration, mealsPerDay } from '$lib/shared/config';
 	import { mealRules, startDate, mode } from '$lib/shared/stores';
-	import RulesImpact from '../components/RulesImpact.svelte';
+	import RulesImpact from '$lib/components/RulesImpact.svelte';
+	import EraseButton from './EraseButton.svelte';
 
 	const numberOfMeals = cycleDuration * mealsPerDay.length;
 
@@ -39,6 +40,7 @@
 
 <section>
 	<h2>Réglages</h2>
+	<h3 id="menu">Menus</h3>
 	<p>Renseignez vos repas pour un cycle de {cycleDuration} jours</p>
 
 	<div class="gaufrier">
@@ -83,6 +85,14 @@
 			>Revenir en mode <strong>aperçu de vos repas</strong></button
 		>
 	{/if}
+
+	<hr />
+
+	<h3 id="effacer-mes-données">Effacer mes données</h3>
+
+	<p>
+		<EraseButton />
+	</p>
 </section>
 
 <style>
