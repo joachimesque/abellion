@@ -3,6 +3,7 @@
 	import { mealRules, startDate, mode } from '$lib/shared/stores';
 	import RulesImpact from '$lib/components/RulesImpact.svelte';
 	import EraseButton from './EraseButton.svelte';
+	import Presets from './Presets.svelte';
 
 	const numberOfMeals = cycleDuration * mealsPerDay.length;
 
@@ -63,6 +64,9 @@
 			</div>
 		{/each}
 	</div>
+
+	<Presets />
+
 	<p aria-live="polite">
 		{#if rulesLeftToSelect > 0}
 			Sélectionnez encore {rulesLeftToSelect} repas
@@ -74,16 +78,18 @@
 	<RulesImpact />
 
 	{#if $mode === 'preview'}
+		<span>Suivi inactif</span>
+
 		<!-- Change mode and start tracking -->
 		<button type="button" on:click={changeModeToTrack} disabled={rulesLeftToSelect > 0}>
-			Passer en mode <strong>suivi de vos repas</strong>
+			Valider et commencer le suivi de vos repas
 		</button>
 	{/if}
 
 	{#if $mode === 'track'}
-		<button type="button" on:click={changeModeToPreview}
-			>Revenir en mode <strong>aperçu de vos repas</strong></button
-		>
+		<span>Suivi actif</span>
+
+		<button type="button" on:click={changeModeToPreview}>Annuler le suivi de vos repas</button>
 	{/if}
 
 	<hr />
