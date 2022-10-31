@@ -131,9 +131,9 @@ export const nonVegOptions = ['meat_1', 'meat_2', 'fish_1', 'fish_2'];
 export const cycleDuration = 14;
 export const mealsPerDay = ['déjeuner', 'dîner'];
 
-export const impactThreshold = 1;
-
+// Nombre de cycles passés à analyser
 export const tallySampleSize = 4;
+// Nombre de cycles valides à atteindre pour proposer une amélioration
 export const tallyImprovementThreshold = 3;
 
 export const locale = 'fr-FR';

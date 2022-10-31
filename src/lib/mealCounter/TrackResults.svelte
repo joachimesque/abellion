@@ -1,5 +1,5 @@
 <script>
-	import { mealTypes, impactThreshold, cycleDuration } from '$lib/shared/config';
+	import { mealTypes, vegOptions, cycleDuration } from '$lib/shared/config';
 	import { getLocalizedNumber } from '$lib/shared/utils';
 	import { mealRules, selectedMeals } from '$lib/shared/stores';
 	import MealCounter from '$lib/components/MealCounter.svelte';
@@ -13,7 +13,7 @@
 			let alert = true;
 
 			// Veg* options are never on alert
-			if (mealType.impact < impactThreshold) {
+			if (vegOptions.includes(mealType.name)) {
 				alert = false;
 			}
 
