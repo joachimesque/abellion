@@ -1,12 +1,14 @@
 <script>
-	import { mealTypes, impactLocaleOptions, vegOptions } from '$lib/shared/config';
+	import { mealTypes, impactLocaleOptions, vegOptions, cycleDuration } from '$lib/shared/config';
 	import { cyclesHistory, selectedMeals, cycleStartDate, cyclesTally } from '$lib/shared/stores';
 	import { getFormattedDay } from '$lib/shared/utils';
 
-	export let getRulesImpactYear;
-
 	let talliedList = [];
 	let totalGains = 0;
+
+	const getRulesImpactYear = (impact) => {
+		return (impact / cycleDuration) * 0.365;
+	};
 
 	const vegOptionsSelect = mealTypes
 		.filter((item) => vegOptions.includes(item.name))
