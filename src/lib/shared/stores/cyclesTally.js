@@ -1,6 +1,6 @@
 import { derived } from 'svelte/store';
-import cyclesHistory from './cycles_history';
-import mealRules from './meal_rules';
+import cyclesHistory from './cyclesHistory';
+import mealRules from './mealRules';
 import { nonVegOptions, tallySampleSize, tallyImprovementThreshold } from '$lib/shared/config';
 
 const defaultValue = {};

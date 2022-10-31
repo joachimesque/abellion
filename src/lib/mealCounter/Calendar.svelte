@@ -69,6 +69,11 @@
 		gap: 1rem;
 		padding-bottom: 1rem;
 		background-color: var(--color-background-calendar);
+		scroll-snap-type: inline proximity;
+	}
+
+	.scrollable-container-content :global(> *) {
+		scroll-snap-align: center;
 	}
 
 	.scrollable-container::before,

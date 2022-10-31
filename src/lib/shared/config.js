@@ -50,6 +50,81 @@ export const mealTypes = [
 	},
 ];
 
+export const mealPresets = {
+	vegan: {
+		pretty_name: 'Tout végan',
+		description: 'Le menu au plus faible impact climatique 💪',
+		rules: {
+			vegan: 28,
+			vegetarian: 0,
+			meat_1: 0,
+			meat_2: 0,
+			fish_1: 0,
+			fish_2: 0,
+		},
+	},
+	veg_50_50: {
+		pretty_name: '50/50 végé',
+		description: 'On réduit la quantité de produits animaux',
+		rules: {
+			vegan: 14,
+			vegetarian: 14,
+			meat_1: 0,
+			meat_2: 0,
+			fish_1: 0,
+			fish_2: 0,
+		},
+	},
+	vegetarian: {
+		pretty_name: 'Tout végétarien',
+		description: 'Le menu sans chair animale !',
+		rules: {
+			vegan: 0,
+			vegetarian: 28,
+			meat_1: 0,
+			meat_2: 0,
+			fish_1: 0,
+			fish_2: 0,
+		},
+	},
+	weekender: {
+		pretty_name: 'Triche le week-end',
+		description: 'Poisson et viande, une fois par semaine',
+		rules: {
+			vegan: 12,
+			vegetarian: 12,
+			meat_1: 2,
+			meat_2: 0,
+			fish_1: 2,
+			fish_2: 0,
+		},
+	},
+	flexitarian: {
+		pretty_name: 'Flexitarien',
+		description: 'Un peu de tout, du moment que l’impact est réduit',
+		rules: {
+			vegan: 10,
+			vegetarian: 10,
+			meat_1: 6,
+			meat_2: 0,
+			fish_1: 2,
+			fish_2: 0,
+		},
+	},
+	meatarian: {
+		pretty_name: 'Viandard',
+		description: 'La moyenne française, aux émissions très élevées',
+		rules: {
+			vegan: 0,
+			vegetarian: 6,
+			meat_1: 8,
+			meat_2: 8,
+			fish_1: 4,
+			fish_2: 2,
+		},
+	},
+}
+
 export const vegOptions = ['vegan', 'vegetarian'];
 export const nonVegOptions = ['meat_1', 'meat_2', 'fish_1', 'fish_2'];
 

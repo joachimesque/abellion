@@ -1,24 +1,26 @@
 <script>
-	import { mealTypes, impactLocaleOptions, vegOptions } from '$lib/shared/config';
+	import { mealTypes, impactLocaleOptions, vegOptions, cycleDuration } from '$lib/shared/config';
 	import { cyclesHistory, selectedMeals, cycleStartDate, cyclesTally } from '$lib/shared/stores';
 	import { getFormattedDay, getLocalizedNumber } from '$lib/shared/utils';
 
-	export let getRulesImpactYear;
-
 	let talliedList = [];
 	let totalGains = 0;
+
+	const getRulesImpactYear = (impact) => {
+		return (impact / cycleDuration) * 0.365;
+	};
 
 	const vegOptionsSelect = mealTypes
 		.filter((item) => vegOptions.includes(item.name))
 		.map((item) => {
 			return { ...item, pretty_name: `tout ${item.pretty_name}` };
 		});
+
 	vegOptionsSelect.push({
 		name: 'mix',
 		pretty_name: '50/50 Végé/Végan',
 		impact: vegOptionsSelect.reduce((a, b) => a + b.impact, 0) / vegOptionsSelect.length,
 	});
-	console.log();
 
 	let selectedVegOption = vegOptionsSelect[0];
 
