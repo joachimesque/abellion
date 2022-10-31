@@ -2,14 +2,14 @@ export const mealTypes = [
 	{
 		name: 'vegan',
 		pretty_name: 'Végan',
-		icon: '🌾🥜🥗',
+		icon: '🥜🥗',
 		description: 'Repas sans produits animaux.',
 		impact: 0.39,
 	},
 	{
 		name: 'vegetarian',
 		pretty_name: 'Végétarien',
-		icon: '🥗🍳🧀',
+		icon: '🍳🧀',
 		description: 'Repas sans chair animale, avec des oeufs ou un peu de fromage.',
 		impact: 0.51,
 	},
@@ -23,7 +23,7 @@ export const mealTypes = [
 	{
 		name: 'meat_1',
 		pretty_name: 'Viande 1',
-		icon: '🍗🥓🧀',
+		icon: '🍗🥓',
 		description: 'Repas contenant une pièce de poulet, porc, ou fromage.',
 		impact: 1.35,
 	},
@@ -123,7 +123,7 @@ export const mealPresets = {
 			fish_2: 2,
 		},
 	},
-}
+};
 
 export const vegOptions = ['vegan', 'vegetarian'];
 export const nonVegOptions = ['meat_1', 'meat_2', 'fish_1', 'fish_2'];
@@ -131,8 +131,12 @@ export const nonVegOptions = ['meat_1', 'meat_2', 'fish_1', 'fish_2'];
 export const cycleDuration = 14;
 export const mealsPerDay = ['déjeuner', 'dîner'];
 
-export const impactThreshold = 1;
+// Nombre de cycles passés à analyser
+export const tallySampleSize = 4;
+// Nombre de cycles valides à atteindre pour proposer une amélioration
+export const tallyImprovementThreshold = 3;
 
+export const locale = 'fr-FR';
 export const impactLocaleOptions = {
 	minimumFractionDigits: 2,
 	maximumFractionDigits: 2,

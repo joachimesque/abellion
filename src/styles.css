@@ -36,6 +36,10 @@ footer {
 	gap: 2rem 1rem;
 }
 
+.spaced-top {
+	margin-top: 8vh;
+}
+
 .sr-only {
 	/* https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
 	border: 0 !important;
