@@ -123,7 +123,7 @@ export const mealPresets = {
 			fish_2: 2,
 		},
 	},
-}
+};
 
 export const vegOptions = ['vegan', 'vegetarian'];
 export const nonVegOptions = ['meat_1', 'meat_2', 'fish_1', 'fish_2'];

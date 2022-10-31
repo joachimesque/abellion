@@ -1,5 +1,5 @@
 <script>
-	import { mealTypes, impactLocaleOptions, vegOptions, cycleDuration } from '$lib/shared/config';
+	import { mealTypes, vegOptions, cycleDuration } from '$lib/shared/config';
 	import { cyclesHistory, selectedMeals, cycleStartDate, cyclesTally } from '$lib/shared/stores';
 	import { getFormattedDay, getLocalizedNumber } from '$lib/shared/utils';
 

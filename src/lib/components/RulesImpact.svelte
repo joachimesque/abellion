@@ -14,13 +14,17 @@
 <p>
 	Impact de votre choix de menus&nbsp;:
 	<strong>
-		{getLocalizedNumber(rulesImpact)}&nbsp;<abbr title="kilos de gaz à effet de serre en équivalent dioxyde de carbone">
+		{getLocalizedNumber(rulesImpact)}&nbsp;<abbr
+			title="kilos de gaz à effet de serre en équivalent dioxyde de carbone"
+		>
 			kCO<sub>2</sub>e
 		</abbr>
 	</strong>
 	{' '} pour {cycleDuration} jours, ou
 	<strong>
-		{getLocalizedNumber(rulesImpactYear)}&nbsp;<abbr title="tonnes de gaz à effet de serre en équivalent dioxyde de carbone">
+		{getLocalizedNumber(rulesImpactYear)}&nbsp;<abbr
+			title="tonnes de gaz à effet de serre en équivalent dioxyde de carbone"
+		>
 			tCO<sub>2</sub>e
 		</abbr>
 	</strong>
