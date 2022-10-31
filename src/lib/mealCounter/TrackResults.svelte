@@ -8,7 +8,6 @@
 	import { mealRules, selectedMeals } from '$lib/shared/stores';
 	import MealCounter from '$lib/components/MealCounter.svelte';
 
-	export let rulesImpact;
 	export let mealsImpact;
 
 	let mealsAlerts = {};
@@ -56,8 +55,7 @@
 		<p>
 			<strong class="big">
 				Impact de ce cycle de {cycleDuration} jours&nbsp;:
-				{mealsImpact.toLocaleString('fr-FR', impactLocaleOptions)}
-				sur {rulesImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e
+				{mealsImpact.toLocaleString('fr-FR', impactLocaleOptions)}&nbsp;kCO<sub>2</sub>e
 			</strong>
 			{#if selectedMealNumber > 1}
 				(soit {(mealsImpact / selectedMealNumber).toLocaleString(

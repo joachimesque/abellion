@@ -1,5 +1,5 @@
 <script>
-	import EraseButton from './EraseButton.svelte';
+	import { base } from '$app/paths';
 </script>
 
 <footer>
@@ -11,8 +11,8 @@
 		mise aux enchères, clin-d’œil-clin-d’œil-légalement-montrée-à-des-tierces-parties-t’as-compris-j’te-cligne,
 		ou rien de la sorte. Les compteurs de visites c’est pour les nullos.
 		<br />
-		Si vous voulez effacer les données que ce site stocke sur votre ordinateur, cliquez ici&nbsp;:
-		<EraseButton />
+		Rendez vous sur la page Réglages pour
+		<a href={`${base}/reglages#effacer-mes-données`}>effacer vos données</a>.
 	</p>
 	<p>
 		Une production <a href="https://joachimesque.com">Joachimesque</a>
