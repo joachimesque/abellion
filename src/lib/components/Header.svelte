@@ -4,6 +4,7 @@
 
 	const site_pages = [
 		['/', 'Accueil'],
+		['/reglages', 'Réglages'],
 		['/pourquoi', 'Pourquoi ?'],
 		['/comment', 'Comment ?'],
 		['/a-propos', 'À propos'],
@@ -34,7 +35,7 @@
 						class="menu_item"
 						class:active={$page.url.pathname === `${base}${site_page[0]}`}
 						on:click={() => (displayMenu = false)}
-						sveltekit:prefetch
+						data-sveltekit-prefetch
 						href={`${base}${site_page[0]}`}
 					>
 						{site_page[1]}
