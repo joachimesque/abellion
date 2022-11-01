@@ -33,6 +33,9 @@
 			</a>, chez Marabout
 		</li>
 	</ul>
+
+	<h2>Ne pas se faire avoir par les marchands de doute (l’industrie agro-alimentaire)</h2>
+	<p>Dans leur bouche, “Flexitarien” veut dire “qui mange surtout de la viande”.</p>
 </div>
 
 <style>

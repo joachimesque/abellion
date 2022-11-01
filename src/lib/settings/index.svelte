@@ -1,6 +1,9 @@
 <script>
 	import { mealTypes, cycleDuration, mealsPerDay } from '$lib/shared/config';
-	import { mealRules } from '$lib/shared/stores';
+	import { mealRules, startDate, mode } from '$lib/shared/stores';
+	import RulesImpact from '$lib/components/RulesImpact.svelte';
+	import EraseButton from './EraseButton.svelte';
+	import Presets from './Presets.svelte';
 
 	const numberOfMeals = cycleDuration * mealsPerDay.length;
 
@@ -24,10 +27,21 @@
 			};
 		});
 	}
+
+	const changeModeToTrack = () => {
+		startDate.set(new Date());
+		mode.set('track');
+	};
+
+	const changeModeToPreview = () => {
+		startDate.set(null);
+		mode.set('preview');
+	};
 </script>
 
 <section>
 	<h2>Réglages</h2>
+	<h3 id="menu">Menus</h3>
 	<p>Renseignez vos repas pour un cycle de {cycleDuration} jours</p>
 
 	<div class="gaufrier">
@@ -50,12 +64,40 @@
 			</div>
 		{/each}
 	</div>
+
+	<Presets />
+
 	<p aria-live="polite">
 		{#if rulesLeftToSelect > 0}
 			Sélectionnez encore {rulesLeftToSelect} repas
 		{:else}
 			Il ne reste pas de repas à sélectionner
 		{/if}
+	</p>
+
+	<RulesImpact />
+
+	{#if $mode === 'preview'}
+		<span>Suivi inactif</span>
+
+		<!-- Change mode and start tracking -->
+		<button type="button" on:click={changeModeToTrack} disabled={rulesLeftToSelect > 0}>
+			Valider et commencer le suivi de vos repas
+		</button>
+	{/if}
+
+	{#if $mode === 'track'}
+		<span>Suivi actif</span>
+
+		<button type="button" on:click={changeModeToPreview}>Annuler le suivi de vos repas</button>
+	{/if}
+
+	<hr />
+
+	<h3 id="effacer-mes-données">Effacer mes données</h3>
+
+	<p>
+		<EraseButton />
 	</p>
 </section>
 

@@ -1,4 +1,4 @@
-import { mealTypes } from './config';
+import { mealTypes, impactLocaleOptions, locale } from './config';
 
 export const getEmptyMealObject = () => {
 	const emptyMealObject = {};
@@ -29,5 +29,7 @@ export const getIntlDate = (date, style = 'long') => {
 		dateInstance = new Date(dateArray[0], dateArray[1] - 1, dateArray[2]);
 	}
 
-	return new Intl.DateTimeFormat('fr-FR', options[style]).format(dateInstance);
+	return new Intl.DateTimeFormat(locale, options[style]).format(dateInstance);
 };
+
+export const getLocalizedNumber = (number) => number.toLocaleString(locale, impactLocaleOptions);

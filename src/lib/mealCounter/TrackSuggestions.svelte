@@ -1,12 +1,14 @@
 <script>
-	import { mealTypes, impactLocaleOptions, vegOptions } from '$lib/shared/config';
+	import { mealTypes, vegOptions, cycleDuration } from '$lib/shared/config';
 	import { cyclesHistory, selectedMeals, cycleStartDate, cyclesTally } from '$lib/shared/stores';
-	import { getFormattedDay } from '$lib/shared/utils';
-
-	export let getRulesImpactYear;
+	import { getFormattedDay, getLocalizedNumber } from '$lib/shared/utils';
 
 	let talliedList = [];
 	let totalGains = 0;
+
+	const getRulesImpactYear = (impact) => {
+		return (impact / cycleDuration) * 0.365;
+	};
 
 	const vegOptionsSelect = mealTypes
 		.filter((item) => vegOptions.includes(item.name))
@@ -84,10 +86,9 @@
 					<option value={vegOpt.name}>{vegOpt.pretty_name}</option>
 				{/each}
 			</select>, vous pouvez économiser
-			<strong>{totalGains.toLocaleString('fr-FR', impactLocaleOptions)}</strong>&nbsp;kCO<sub>2</sub
-			>e par cycle, soit
-			<strong>{getRulesImpactYear(totalGains).toLocaleString('fr-FR', impactLocaleOptions)}</strong
-			>&nbsp;tCO<sub>2</sub>e par an.
+			<strong>{getLocalizedNumber(totalGains)}</strong>&nbsp;kCO<sub>2</sub>e par cycle, soit
+			<strong>{getLocalizedNumber(getRulesImpactYear(totalGains))}</strong>&nbsp;tCO<sub>2</sub>e
+			par an.
 		</div>
 	</section>
 {/if}
