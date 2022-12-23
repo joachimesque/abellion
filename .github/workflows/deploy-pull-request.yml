@@ -19,7 +19,7 @@ jobs:
           npm run build
 
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
@@ -28,7 +28,7 @@ jobs:
           server-dir: branches/${{ github.event.pull_request.head.ref }}/
 
       - name: 💬 Leave a message
-        uses: mshick/add-pr-comment@v1
+        uses: mshick/add-pr-comment@v2
         with:
           message: |
             ## 🧑‍🔧 Branch preview has been deployed!
