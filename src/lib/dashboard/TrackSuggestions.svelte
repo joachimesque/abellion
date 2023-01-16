@@ -65,7 +65,7 @@
 	<section>
 		<h2>Suggestions</h2>
 		<p class="big">
-			En inspectant vos 4 dernier cycles, vous avez consommé moins de repas non-vegé/vegan que vos
+			En inspectant vos 4 dernier cycles, vous avez consommé plus de repas vegé/vegan que vos
 			objectifs <span role="img" title="Emoji Félicitations">🤗</span><br />
 			N’hésitez pas à mettre à jour ceux-ci pour refléter ce progrès&nbsp;!
 		</p>

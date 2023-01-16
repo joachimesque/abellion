@@ -10,7 +10,7 @@
 </script>
 
 <section>
-	<h2>Repas sélectionnés</h2>
+	<h2>Repas sélectionnés <small>sur le mois courant</small></h2>
 	<div class="gaufrier">
 		{#each mealTypes as mealType}
 			<MealCounter {mealType} count={$selectedMeals[mealType.name] || 0} />

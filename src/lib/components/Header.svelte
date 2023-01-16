@@ -4,6 +4,7 @@
 
 	const site_pages = [
 		['/', 'Accueil'],
+		['/calendrier', 'Calendrier'],
 		['/reglages', 'Réglages'],
 		['/pourquoi', 'Pourquoi ?'],
 		['/comment', 'Comment ?'],

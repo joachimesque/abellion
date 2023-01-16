@@ -1,9 +1,9 @@
 <script>
-	import MealCounter from '$lib/mealCounter/index.svelte';
+	import Dashboard from '$lib/dashboard/index.svelte';
 </script>
 
 <svelte:head>
 	<title>Décarbonnez votre alimentation — Abellion 🧑‍🌾</title>
 </svelte:head>
 
-<MealCounter />
+<Dashboard />

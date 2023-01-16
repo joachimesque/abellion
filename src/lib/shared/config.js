@@ -2,7 +2,7 @@ export const mealTypes = [
 	{
 		name: 'vegan',
 		pretty_name: 'Végan',
-		icon: '🥜🥗',
+		icon: '🥑🥗',
 		description: 'Repas sans produits animaux.',
 		impact: 0.39,
 	},
@@ -44,7 +44,7 @@ export const mealTypes = [
 	{
 		name: 'fish_2',
 		pretty_name: 'Poisson 2',
-		icon: '🐟🍚',
+		icon: '🐟🐙',
 		description: 'Repas avec un filet de poisson blanc.',
 		impact: 1.98,
 	},
@@ -77,7 +77,7 @@ export const mealPresets = {
 	},
 	vegetarian: {
 		pretty_name: 'Tout végétarien',
-		description: 'Le menu sans chair animale !',
+		description: 'Un menu sans chair animale !',
 		rules: {
 			vegan: 0,
 			vegetarian: 28,
