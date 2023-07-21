@@ -14,6 +14,8 @@ Les prochains développements sont renseignés dans le fichier [TODO.md](TODO.md
 
 Cette app a été bâtie avec [SvelteKit](https://kit.svelte.dev/), qui utilise [Vite](https://vitejs.dev/) pour la compilation.
 
+Pour activer PNPM au lieu de NPM, vous pouvez utiliser la commande `corepack enable`.
+
 ### Développement
 
 Une fois le projet cloné en local et les dépendances installées avec `pnpm i`, démarrez le serveur de développement :
