@@ -1,6 +1,11 @@
 module.exports = {
 	root: true,
-	extends: ['eslint:recommended', 'prettier', 'plugin:svelte/recommended'],
+	extends: [
+		'eslint:recommended',
+		'prettier',
+		'plugin:svelte/recommended',
+		'plugin:svelte/prettier',
+	],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020,
@@ -9,5 +14,8 @@ module.exports = {
 		browser: true,
 		es2017: true,
 		node: true,
+	},
+	rules: {
+		'no-irregular-whitespace': 0,
 	},
 };
