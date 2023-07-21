@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: 🛠 Build
+      - name: 🧹 Check
         run: |
           corepack enable
           pnpm i --frozen-lockfile
