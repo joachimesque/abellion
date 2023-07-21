@@ -21,7 +21,7 @@
 	</h3>
 
 	<div class="selectors">
-		{#each day[1].selection as _, index}
+		{#each [...mealsPerDay.keys()] as index}
 			<MealSelect
 				meal={mealsPerDay[index]}
 				on:change={(event) => onSelectMeal({ day: day[0], meal: index, value: event.detail.value })}
@@ -35,13 +35,15 @@
 <style>
 	.day {
 		border-radius: var(--border-radius);
-		padding: 0.2rem 0.1rem;
+		padding: 0.2rem 0.1rem 0.5rem;
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		border: 1px solid Gainsboro;
 	}
 
 	.day.is-today {
+		border: 1px solid DarkSalmon;
 		background-color: LightSalmon;
 	}
 

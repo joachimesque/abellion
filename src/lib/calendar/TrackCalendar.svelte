@@ -75,7 +75,7 @@
 	.calendar-grid {
 		display: grid;
 		grid-template-columns: repeat(7, 1fr);
-		gap: 0.5rem 0;
+		gap: 0.5rem;
 	}
 
 	.head {

@@ -104,7 +104,6 @@
 		aria-controls={`${namespace}_dropdown`}
 		aria-label={`Sélectionnez pour le ${meal}, choix : ${currentMeal?.pretty_name || 'aucun'}`}
 		aria-expanded={isDropdownOpen}
-		aria-activedescendant={`${namespace}_element_${value}`}
 		on:click={() => handleDropdown('switch')}
 		on:keyup={handleTriggerKeyUp}
 	>

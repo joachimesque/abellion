@@ -46,7 +46,7 @@ export const getIntlDate = (date, style = 'long') => {
 		}
 
 		return new Intl.DateTimeFormat(locale, { day: 'numeric', weekday: 'long' }).format(
-			dateInstance
+			dateInstance,
 		);
 	}
 
