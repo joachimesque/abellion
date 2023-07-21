@@ -24,7 +24,6 @@
 		for (let d = firstMonday; d <= lastSunday; d.setDate(d.getDate() + 1)) {
 			fullCalendar.push(getFormattedDay(new Date(d)));
 		}
-		console.log(calendar);
 	}
 </script>
 

@@ -55,7 +55,6 @@
 				}
 				break;
 			default:
-				console.log(event.key, event.shiftKey);
 				break;
 		}
 	};
