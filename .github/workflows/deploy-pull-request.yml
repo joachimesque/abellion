@@ -16,7 +16,7 @@ jobs:
           sed -i 's+href="/manifest.webmanifest"+href="/branches/${{ github.event.pull_request.head.ref }}/manifest.webmanifest"+g' ./src/app.html
           sed -i 's+"/"+"/branches/${{ github.event.pull_request.head.ref }}/"+g' ./static/manifest.webmanifest
           corepack enable
-          pnpm ci
+          pnpm i --frozen-lockfile
           pnpm run build
 
       - name: 📂 Sync files

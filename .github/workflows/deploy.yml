@@ -17,7 +17,7 @@ jobs:
       - name: 🛠 Build
         run: |
           corepack enable
-          pnpm ci
+          pnpm i --frozen-lockfile
           pnpm run build
 
       - name: 📂 Sync files
