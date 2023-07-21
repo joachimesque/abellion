@@ -67,10 +67,10 @@
 		<p class="big">
 			En inspectant vos 4 dernier cycles, vous avez consommé moins de repas non-vegé/vegan que vos
 			objectifs <span role="img" title="Emoji Félicitations">🤗</span><br />
-			N’hésitez pas à mettre à jour ceux-ci pour refléter ce progrès&nbsp;!
+			N’hésitez pas à mettre à jour ceux-ci pour refléter ce progrès !
 		</p>
 		<div>
-			En remplaçant les repas suivants&nbsp;:
+			En remplaçant les repas suivants :
 
 			<ul>
 				{#each talliedList as meal}
@@ -86,8 +86,8 @@
 					<option value={vegOpt.name}>{vegOpt.pretty_name}</option>
 				{/each}
 			</select>, vous pouvez économiser
-			<strong>{getLocalizedNumber(totalGains)}</strong>&nbsp;kCO<sub>2</sub>e par cycle, soit
-			<strong>{getLocalizedNumber(getRulesImpactYear(totalGains))}</strong>&nbsp;tCO<sub>2</sub>e
+			<strong>{getLocalizedNumber(totalGains)}</strong> kCO<sub>2</sub>e par cycle, soit
+			<strong>{getLocalizedNumber(getRulesImpactYear(totalGains))}</strong> tCO<sub>2</sub>e
 			par an.
 		</div>
 	</section>

@@ -50,11 +50,11 @@
 	{#if selectedMealNumber > 0}
 		<p>
 			<strong class="big">
-				Impact de ce cycle de {cycleDuration} jours&nbsp;:
-				{getLocalizedNumber(mealsImpact)}&nbsp;kCO<sub>2</sub>e
+				Impact de ce cycle de {cycleDuration} jours :
+				{getLocalizedNumber(mealsImpact)} kCO<sub>2</sub>e
 			</strong>
 			{#if selectedMealNumber > 1}
-				(soit {getLocalizedNumber(mealsImpact / selectedMealNumber)}&nbsp;kCO<sub>2</sub>e par
+				(soit {getLocalizedNumber(mealsImpact / selectedMealNumber)} kCO<sub>2</sub>e par
 				repas)
 			{/if}
 		</p>

@@ -18,7 +18,7 @@ Pour activer PNPM au lieu de NPM, vous pouvez utiliser la commande `corepack ena
 
 ### Développement
 
-Une fois le projet cloné en local et les dépendances installées avec `pnpm i`, démarrez le serveur de développement :
+Une fois le projet cloné en local et les dépendances installées avec `pnpm i`, démarrez le serveur de développement :
 
 ```bash
 pnpm run dev
@@ -28,7 +28,7 @@ Puis pointez votre navigateur à l’adresse `http://127.0.0.1:5173/`
 
 ### Compilation
 
-Pour créer la version de production de l’application :
+Pour créer la version de production de l’application :
 
 ```bash
 pnpm run build

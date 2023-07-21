@@ -77,7 +77,7 @@ export const mealPresets = {
 	},
 	vegetarian: {
 		pretty_name: 'Tout végétarien',
-		description: 'Le menu sans chair animale !',
+		description: 'Le menu sans chair animale !',
 		rules: {
 			vegan: 0,
 			vegetarian: 28,

@@ -48,7 +48,7 @@
 				<option value="null">Non sélectionné</option>
 				{#each mealTypes as mealType}
 					<option value={mealType.name} selected={day[1].selection[index] === mealType.name}>
-						{mealType.pretty_name}&nbsp;
+						{mealType.pretty_name} 
 						<span aria-hidden="true">{mealType.icon}</span>
 					</option>
 				{/each}

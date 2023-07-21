@@ -19,17 +19,17 @@
 	</p>
 
 	<p>
-		On ne va pas se mentir&nbsp;: les régimes alimentaires venant de produits animaux ont un impact
+		On ne va pas se mentir : les régimes alimentaires venant de produits animaux ont un impact
 		bien supérieur aux régimes alimentaires limités aux seuls produits végétaux. Pour réduire
 		l’impact climatique de nos assiettes, il faut réduire autant que possible notre consommation de
 		produits venant des animaux. Mais le climat n’est pas la seule raison, comme le montre la page <a
-			href={`${base}/pourquoi`}>Pourquoi c’est important de manger moins de viande&nbsp;?</a
+			href={`${base}/pourquoi`}>Pourquoi c’est important de manger moins de viande ?</a
 		>
 	</p>
 
 	<p>
 		Une fois qu’on perçoit l’urgence de réduire sa consommation de viande, par quel bout est-ce
-		qu’il vaut mieux s’y prendre&nbsp;? Les produits animaux font tellement partie de notre culture
+		qu’il vaut mieux s’y prendre ? Les produits animaux font tellement partie de notre culture
 		que ça peut paraître impossible à éliminer de nos menus. Pour ça, il y a plein de pistes à
 		explorer—et cet outil Abellion n’en est qu’une. Pour tout savoir, visitez la page <a
 			href={`${base}/comment`}>Comment manger moins de viande</a
@@ -54,9 +54,9 @@
 	</p>
 
 	<p>
-		Au chargement de la page, vous découvrez le calendrier&nbsp;: celui-ci déroule deux semaines
+		Au chargement de la page, vous découvrez le calendrier : celui-ci déroule deux semaines
 		passées et deux semaines à venir, pour vous permettre de renseigner vos repas.<br />
-		Pourquoi l’avenir&nbsp;? C’est pour se projeter, et mieux prévoir&nbsp;; au cas où il y a une soirée
+		Pourquoi l’avenir ? C’est pour se projeter, et mieux prévoir ; au cas où il y a une soirée
 		sushi dans la semaine ou un week-end chez l’oncle boucher, ou alors pour planifier les courses ou
 		les repas cuisinés en avance…
 	</p>
@@ -114,17 +114,17 @@
 		>.
 	</p>
 
-	<p>La liste des repas&nbsp;:</p>
+	<p>La liste des repas :</p>
 
 	<ul>
 		{#each mealTypes as meal}
 			<li>
 				<span role="img" title="">{meal.icon}</span>
 				<strong>{meal.pretty_name}</strong>
-				({getLocalizedNumber(meal.impact)}&nbsp;<abbr
+				({getLocalizedNumber(meal.impact)} <abbr
 					title="kilos de gaz à effet de serre en équivalent dioxyde de carbone"
 					>kCO<sub>2</sub>e</abbr
-				>)&nbsp;:
+				>) :
 				{meal.description}
 			</li>
 		{/each}
@@ -141,19 +141,19 @@
 	<p>
 		Le débat autour de l’utilité des “petits gestes” individuels revient souvent quand on discute
 		d’environnement. Évidemment, adopter un régime végétal est bien une action individuelle, les
-		végan·es ou végétarien·nes ne s’y trompent pas&nbsp;: la première action, c’est d’arrêter de
+		végan·es ou végétarien·nes ne s’y trompent pas : la première action, c’est d’arrêter de
 		consommer des produits animaux. Un·e activiste pour le bien-être animal qui ne changerait pas
 		son alimentation pour être raccord avec ses idées et paroles serait la risée de la société. Ce
 		“petit geste” est primordial, sans quoi il serait hypocrite de dénoncer quoi que ce soit sur le
-		sujet. C’est aussi une action qui montre l’exemple&nbsp;: j’y arrive, donc c’est possible et je
+		sujet. C’est aussi une action qui montre l’exemple : j’y arrive, donc c’est possible et je
 		peux te montrer comment y arriver.
 	</p>
 
 	<p>
 		En revanche, la portée des actions individuelles est limitée. Le rapport <a
 			href="https://www.carbone4.com/publication-faire-sa-part"
-			>Faire sa part&nbsp;? du cabinet Carbone 4</a
-		> le montre bien, 75&nbsp;% de la réduction nécessaire de l’impact de nos modes de vie ne peuvent
+			>Faire sa part ? du cabinet Carbone 4</a
+		> le montre bien, 75 % de la réduction nécessaire de l’impact de nos modes de vie ne peuvent
 		être entrepris que par l’action collective de la société. Si on s’en tient à nos “petits gestes”
 		on ne fera pas grand chose—mais si on ne fait même pas cet effort, nos revendications ne pourront
 		pas être prises au sérieux, nos alternatives continueront à être ignorées. Les actions individuelles
@@ -164,7 +164,7 @@
 		Une fois qu’on a dépassé cette opposition, il faut construire là-dessus. Pour ça, deux actions
 		sont plus grandes que les petits gestes mais accessibles à tout le monde. D’une part il faut
 		parler des crises environnementales provoquées par nos sociétés, et convaincre d’autres
-		personnes d’adopter eux aussi des actions en faveur de l’environnement&nbsp;; c’est pour ça que
+		personnes d’adopter eux aussi des actions en faveur de l’environnement ; c’est pour ça que
 		donner l’exemple est si important. D’autre part il faut s’engager dans les collectifs, les
 		actions, le monde politique, etc. C’est dans ces contextes-là, quand beaucoup de monde se
 		rassemble, que les rapports de force se font. Et c’est seulement des rapports de force en notre
@@ -180,7 +180,7 @@
 	<p class="big">
 		Il faut se méfier des solutions technologiques. Les problèmes environnementaux actuels
 		proviennent des systèmes économiques et sociaux qui sous-tendent nos vies (même le
-		<abbr title="Groupe International d’Experts sur le Climat">GIEC</abbr> le dit)&nbsp;; ces
+		<abbr title="Groupe International d’Experts sur le Climat">GIEC</abbr> le dit) ; ces
 		problèmes ne pourront pas être résolus avec une énième app ou un énième concept tech qui ne
 		remet pas radicalement en cause le <em>status quo</em>.
 	</p>
@@ -189,7 +189,7 @@
 		Ce n’est pas ce site qui va changer la donne. Mais qui sait, peut-être qu’il pourra vous
 		accompagner vers un régime moins carné, voire végétarien ou végan. Et à partir de là, quelles
 		sont les questions que vous vous poserez sur les autres facteurs d’émissions dont vous êtes (au
-		moins un petit peu) responsables&nbsp;?
+		moins un petit peu) responsables ?
 	</p>
 
 	<h2>Mention sur l’hébergement du site et vos données</h2>

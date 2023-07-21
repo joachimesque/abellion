@@ -19,11 +19,11 @@
 	{#if selectedMealNumber > 0}
 		<p>
 			<strong class="big">
-				Impact de {selectedMealNumber} repas&nbsp;:
-				{getLocalizedNumber(mealsImpact)}&nbsp;kCO<sub>2</sub>e
+				Impact de {selectedMealNumber} repas :
+				{getLocalizedNumber(mealsImpact)} kCO<sub>2</sub>e
 			</strong>
 			{#if selectedMealNumber > 1}
-				soit {getLocalizedNumber(mealsImpact / selectedMealNumber)}&nbsp;kCO<sub>2</sub>e par repas
+				soit {getLocalizedNumber(mealsImpact / selectedMealNumber)} kCO<sub>2</sub>e par repas
 			{/if}
 		</p>
 	{/if}
