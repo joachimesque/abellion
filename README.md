@@ -16,10 +16,10 @@ Cette app a été bâtie avec [SvelteKit](https://kit.svelte.dev/), qui utilise 
 
 ### Développement
 
-Une fois le projet cloné en local et les dépendances installées avec `npm i`, démarrez le serveur de développement :
+Une fois le projet cloné en local et les dépendances installées avec `pnpm i`, démarrez le serveur de développement :
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Puis pointez votre navigateur à l’adresse `http://127.0.0.1:5173/`
@@ -29,10 +29,10 @@ Puis pointez votre navigateur à l’adresse `http://127.0.0.1:5173/`
 Pour créer la version de production de l’application :
 
 ```bash
-npm run build
+pnpm run build
 ```
 
-Vous pouvez prévisualiser le build de production avec la commande `npm run preview`.
+Vous pouvez prévisualiser le build de production avec la commande `pnpm run preview`.
 
 ## Contributions
 

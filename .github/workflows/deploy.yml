@@ -16,8 +16,9 @@ jobs:
 
       - name: 🛠 Build
         run: |
-          npm ci
-          npm run build
+          corepack enable
+          pnpm i --frozen-lockfile
+          pnpm run build
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3

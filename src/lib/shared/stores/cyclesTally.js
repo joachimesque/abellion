@@ -54,7 +54,7 @@ export const cyclesTally = derived([cyclesHistory, mealRules], ([$cyclesHistory,
 					comparison,
 				},
 			];
-		})
+		}),
 	);
 });
 
