@@ -11,17 +11,17 @@
 
 	<h2>Impact de la viande sur le climat</h2>
 
-	<p>14,5&nbsp;% des émissions mondiales de gaz à effet de serre proviennent de l’élevage.</p>
+	<p>14,5 % des émissions mondiales de gaz à effet de serre proviennent de l’élevage.</p>
 	<p>
-		L’élevage provoque la déforestation à travers le monde&nbsp;: c’est le cas de l’Amazonie, où la
+		L’élevage provoque la déforestation à travers le monde : c’est le cas de l’Amazonie, où la
 		forêt primaire, poumon de la planète, est coupée pour faire place à des cultures de soja,
 		utilisé en immense majorité pour nourrir les animaux d’élevage du monde entier.
 	</p>
 
 	<p>
-		Une vidéo du Monde&nbsp;: <a
+		Une vidéo du Monde : <a
 			href="https://www.lemonde.fr/planete/video/2015/03/20/le-vrai-poids-de-la-viande-sur-l-environnement_4597689_3244.html"
-			>4 minutes pour comprendre le vrai poids de la viande sur l'environnement</a
+			>4 minutes pour comprendre le vrai poids de la viande sur l’environnement</a
 		>
 	</p>
 
@@ -40,14 +40,14 @@
 		cultures fourragères se retrouvent dans les cours d’eau puis dans la mer, ce qui provoque la
 		prolifération d’algues vertes. Ces proliférations entrainent des phénomènes d’hypoxie, où des
 		“zones mortes” aquatiques n’ont plus assez d’oxygène pour soutenir la vie. Bien d’autres types
-		de pollution de l’eau sont dues à l’élevage&nbsp;: antibiotiques, hormones, engrais et
+		de pollution de l’eau sont dues à l’élevage : antibiotiques, hormones, engrais et
 		pesticides utilisés pour les fourrages, résidus de tanneries…
 	</p>
 
 	<h2>Impact de la viande sur la santé</h2>
 
 	<p>
-		Plusieurs maladies sont encouragées par la surconsommation de viande rouge&nbsp;: diabète de
+		Plusieurs maladies sont encouragées par la surconsommation de viande rouge : diabète de
 		type 2, cancer du côlon ou maladies cardio-vasculaires. D’autres cancers sont liés à la
 		consommation de viande en général, ou à la consommation de charcuterie (via l’ajout de nitrites
 		dans les procédés industriels).

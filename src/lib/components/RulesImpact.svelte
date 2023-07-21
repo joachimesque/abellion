@@ -12,9 +12,9 @@
 </script>
 
 <p>
-	Impact de votre choix de menus&nbsp;:
+	Impact de votre choix de menus :
 	<strong>
-		{getLocalizedNumber(rulesImpact)}&nbsp;<abbr
+		{getLocalizedNumber(rulesImpact)} <abbr
 			title="kilos de gaz à effet de serre en équivalent dioxyde de carbone"
 		>
 			kCO<sub>2</sub>e
@@ -22,7 +22,7 @@
 	</strong>
 	{' '} pour {cycleDuration} jours, ou
 	<strong>
-		{getLocalizedNumber(rulesImpactYear)}&nbsp;<abbr
+		{getLocalizedNumber(rulesImpactYear)} <abbr
 			title="tonnes de gaz à effet de serre en équivalent dioxyde de carbone"
 		>
 			tCO<sub>2</sub>e
@@ -30,6 +30,6 @@
 	</strong>
 	par an. La moyenne annuelle française est de
 	<strong>
-		1,9&nbsp;tCO<sub>2</sub>e
+		1,9 tCO<sub>2</sub>e
 	</strong>.
 </p>
