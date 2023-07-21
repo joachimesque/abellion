@@ -154,6 +154,16 @@
 		white-space: nowrap;
 	}
 
+	button[aria-haspopup='listbox']:focus-visible {
+		outline: auto;
+	}
+
+    @supports not selector(:focus-visible) {
+      button[aria-haspopup='listbox']:focus {
+        outline: auto;
+      }
+    }
+
 	[aria-haspopup='listbox']:not([aria-expanded='true']) + ul[role='listbox'] {
 		margin: 0;
 		width: 0;

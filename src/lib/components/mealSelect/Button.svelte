@@ -45,15 +45,15 @@
 		background-color: hsl(0deg, 0%, 86%);
 	}
 
-	button:focus {
-		outline-style: auto;
-	}
-	button:focus:not(:focus-visible) {
-		outline: transparent;
-	}
 	button:focus-visible {
-		outline-style: auto;
+		outline: auto;
 	}
+
+    @supports not selector(:focus-visible) {
+      button:focus {
+        outline: auto;
+      }
+    }
 
 	.icon {
 		font-size: 1.3rem;
