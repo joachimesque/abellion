@@ -37,7 +37,8 @@
 	<legend>
 		{getIntlDate(day[0], 'medium')}
 	</legend>
-	{#each day[1].selection as _, index}
+
+	{#each [...mealsPerDay.keys()] as index}
 		<div class="control">
 			<label for={`${day[0]}_${index}`}>{mealsPerDay[index]}</label>
 			<select

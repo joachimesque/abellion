@@ -1,0 +1,23 @@
+name: Lint
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    name: 🧹 Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⚙️ Checkout
+        uses: actions/checkout@v3
+      - name: 🪄 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: 🛠 Build
+        run: |
+          corepack enable
+          pnpm i --frozen-lockfile
+          pnpm run lint

@@ -9,7 +9,7 @@
 	<br />
 	<span class="name">{mealType.pretty_name}</span>
 	<br />
-	<strong class="number" class:alert>{@html count}</strong>
+	<strong class="number" class:alert>{count}</strong>
 </p>
 
 <style>
