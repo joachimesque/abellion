@@ -15,8 +15,9 @@ jobs:
           sed -i -e '6ipaths: { base: "/branches/${{ github.event.pull_request.head.ref }}" },\' ./svelte.config.js
           sed -i 's+href="/manifest.webmanifest"+href="/branches/${{ github.event.pull_request.head.ref }}/manifest.webmanifest"+g' ./src/app.html
           sed -i 's+"/"+"/branches/${{ github.event.pull_request.head.ref }}/"+g' ./static/manifest.webmanifest
-          npm ci
-          npm run build
+          corepack enable
+          pnpm i --frozen-lockfile
+          pnpm run build
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4

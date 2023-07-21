@@ -22,7 +22,7 @@ export const cycleCalendar = derived(
 		});
 
 		return newCycleCalendar;
-	}
+	},
 );
 
 export { cycleCalendar as default };
