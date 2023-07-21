@@ -28,7 +28,7 @@ const getCalendar = (data = null) => {
 						return data[formattedDay].selection[index];
 					}
 					return null;
-				}
+				},
 			);
 		}
 	});
