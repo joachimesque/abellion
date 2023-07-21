@@ -16,7 +16,7 @@ updates:
       - 'joachimesque'
 
   # Maintain dependencies for pnpm
-  - package-ecosystem: 'pnpm'
+  - package-ecosystem: 'npm'
     directory: '/'
     schedule:
       interval: 'monthly'
