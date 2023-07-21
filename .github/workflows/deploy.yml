@@ -16,6 +16,7 @@ jobs:
 
       - name: 🛠 Build
         run: |
+          corepack enable
           pnpm ci
           pnpm run build
 
