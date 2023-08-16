@@ -3,7 +3,7 @@
 	import { mealTypes } from '$lib/shared/config';
 	import { selectedMeals, mode } from '$lib/shared/stores';
 	import RulesImpact from '../components/RulesImpact.svelte';
-	import Calendar from './Calendar.svelte';
+	import Dashboard from './Dashboard.svelte';
 	import PreviewResults from './PreviewResults.svelte';
 	import TrackResults from './TrackResults.svelte';
 	import TrackSuggestions from './TrackSuggestions.svelte';
@@ -32,7 +32,7 @@
 {/if}
 
 {#if $mode}
-	<Calendar />
+	<Dashboard />
 
 	{#if $mode === 'preview'}
 		<PreviewResults {mealsImpact} />
